@@ -1,0 +1,21 @@
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.128.0"
+
+[[params.social]]
+  icon = "brand-youtube"
+  name = "YouTube"
+  url = "https://www.youtube.com/@BensSmartHomeIdeas"
+
+[params]
+site_logo = "images/logo.png"
+avatar = "images/logo.png"
+description = "I'm on a mission to make everyone as passionate about smart homes as I am."
+
+[params.style]
+  darkestColor = "black"
+  darkColor = "#2D3844"
+  lightColor = "#E4E1D7"
+  lightestColor = "#f5f5f5"
+  primaryColor = "#237AB1"

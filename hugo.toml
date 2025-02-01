@@ -1,0 +1,4 @@
+baseURL = 'https://smarthomeideas.info/'
+languageCode = 'en-gb'
+title = 'Smart Home Ideas'
+theme = "hugo-theme-m10c"
