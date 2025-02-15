@@ -1,11 +1,21 @@
 +++
-date = '2025-02-01T20:56:07Z'
+date = '2025-02-01T00:00:00Z'
 title = 'Govee and Frigate Porch Light'
 +++
 
-_This is a transcript from one of my [YouTube videos](https://www.youtube.com/watch?v=SlhU_mDVFgw)_
+_This is a transcript from one of my [YouTube videos](https://www.youtube.com/@BensSmartHomeIdeas)_
 
 ---
+
+# Video
+
+You can watch the full video on YouTube here:
+{{< youtube SlhU_mDVFgw >}}
+
+# Video links:
+- Google Coral: https://amzn.to/49Ze8SS
+- Govee wall lights: https://amzn.to/3DFGrtu
+- Govee2MQTT: https://github.com/wez/govee2mqtt
 
 # Transcript
 
@@ -50,16 +60,6 @@ I actually liked this light so much, I put one in my back garden as well!
 If you fancy picking up one (or two!) of these lights, I'll have an affiliate link in the description, which will give me a small kickback at no extra cost to you.
 
 They also have a range of different `scenes`, which means you can set them up to look pretty and themed when there are seasonal events light Halloween or Christmas.
-
-# Video links:
-- Google Coral: https://amzn.to/49Ze8SS
-- Govee wall lights: https://amzn.to/3DFGrtu
-- Govee2MQTT: https://github.com/wez/govee2mqtt
-
-# Video
-
-You can watch the full video on YouTube here:
-{{< youtube SlhU_mDVFgw >}}
 
 # Support me to keep making videos
 
