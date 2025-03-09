@@ -8,16 +8,16 @@ _This is a transcript from one of my [YouTube videos](https://www.youtube.com/@B
 
 ---
 
-# Transcript
-
-
-# Video links:
-- 
-
 # Video
 
 You can watch the full video on YouTube here:
 {{< youtube link >}}
+
+# Video links:
+- 
+
+# Transcript
+
 
 # Support me to keep making videos
 
