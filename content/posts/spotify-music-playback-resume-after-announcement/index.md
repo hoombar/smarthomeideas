@@ -1,5 +1,5 @@
 +++
-date = '2025-02-01T00:00:00Z'
+date = '2025-01-25T00:00:00Z'
 title = 'Resume Spotify music after an announcement'
 +++
 
