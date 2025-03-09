@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Using Chat GPT to create home assistant automations // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Using Chat GPT to create home assistant automations">
+  <meta name="twitter:description" content="This is a transcript from one of my YouTube videos
+Video You can watch the full video on YouTube here: Transcript I’m sure you’re already aware of Chat GPT, and some of the things it’s capable of. I’m going to show you how I use it to help me with home automations, from getting help with Home Assistant templates, to writing code to generate output I can use in scripts..">
+
+    <meta property="og:url" content="http://localhost:1313/posts/using-chat-gpt-to-make-automations/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Using Chat GPT to create home assistant automations">
+  <meta property="og:description" content="This is a transcript from one of my YouTube videos
+Video You can watch the full video on YouTube here: Transcript I’m sure you’re already aware of Chat GPT, and some of the things it’s capable of. I’m going to show you how I use it to help me with home automations, from getting help with Home Assistant templates, to writing code to generate output I can use in scripts..">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-24T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Using Chat GPT to create home assistant automations</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Feb 24, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          8 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><em>This is a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/agaB10PI2Fc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="transcript">Transcript</h1>
+<p>I&rsquo;m sure you&rsquo;re already aware of Chat GPT, and some of the things it&rsquo;s capable of. I&rsquo;m going to show you how I use it to help me with home automations, from getting help with Home Assistant templates, to writing code to generate output I can use in scripts..</p>
+<p>There&rsquo;s some things you should be aware of. I&rsquo;m going to dive in to some topics like how up to date the information is, what a context window is, custom GPTs, and what RAG, or retrieval augmented generation is.</p>
+<p>If that sounds interesting, stick around, and we&rsquo;ll dive in.</p>
+<p>Let&rsquo;s start with how up to date the information is. We&rsquo;re going to give Chat GPT a very simple prompt, we&rsquo;re going to ask it &ldquo;Can you turn off encryption for specific locations in a Home Assistant backup?&rdquo;. And, you can see, straight out of the box, it says no, it&rsquo;s not possible. However, if you look at one of the more recent releases of Home Assistant, you can see that one of the feature that was actually added, was the ability to turn of encryption for specific locations.</p>
+<p>Because that text wasn&rsquo;t available at the time the model was built, that means that the model doesn&rsquo;t include that knowledge, and it doesn&rsquo;t understand that it is actually possible to do this.</p>
+<p>That begs the question &ldquo;how up to date <em>is</em> the information?&rdquo;.
+Well, that&rsquo;s a hard question to answer, because it will depend on the model you are running, and the interface or software layer that is interacting with the model. You might get a different answer between Chat GPT, Deepseek, and Claude. Actually, since I started making this video, Open AI, the company behind Chat GPT have actually released an update that will web search and augment the answer with the results. Ultimately, if you&rsquo;re running your own LLM locally through Ollama, then you will still need to be aware of this, but if you&rsquo;re using something like Chat GPT, it shouldn&rsquo;t be a concern unless you&rsquo;re looking at something cutting edge.</p>
+<p>Next, let&rsquo;s take a quick look at what a context window is.</p>
+<p>If you enter some text in to the chat, you&rsquo;ll notice that the LLM &ldquo;learns&rdquo; from the text you input. As a simple example, if I tell it my name, it can then augment answers later on with that knowledge. Context windows have a limited size, which is where RAG, or Retrieval Augmented Generation comes in. You can add a lot more context using RAG, for example, I wrote a Python script to scrape the releases from the Home Assistant blog, and write the content in to Markdown files using <code>Crawl4AI</code>.</p>
+<p>With all of the markdown files downloaded, I can add them as knowledge to Open Web UI. You can also create custom GPTs in Chat GPT if you pay for it, which will effectively do the same thing. Open Web UI is free, and I&rsquo;m interested in running LLMs locally, so that&rsquo;s what I&rsquo;m using, but it&rsquo;s the same concept.
+You can see I&rsquo;ve uploaded all of the markdown files, and now I can query specifically that collection to augment the generation of text using the knowledge in those markdown files.. Now it knows, without having to tell it in a context window, that you can turn off encryption for specific locations.</p>
+<p>Ok, now that the quick primer on expectations around the LLMs knowledge is out of the way, let&rsquo;s dive in to some actual automation generation. I&rsquo;m just going to use Chat GPT for this, as it&rsquo;s open, accessible, and free. The topics in this video aren&rsquo;t advanced enough to require specific coding models, like Qwen2.5-coder, so there isn&rsquo;t any need to complicate things with that, as Chat GPT actually does a fantastic job.</p>
+<p>Imagine you want to create an automation with a condition which checks whether the automation has been run in the last 5 minutes. In the past, I might have trawled the Home Assistant forums looking for an answer, but by asking Chat GPT the correct prompt, it will generate the YAML for me.</p>
+<p>Look at that. It&rsquo;s even given me an explanation of what the condition is doing, and why it works.
+It tells me how to get the number of seconds from the timestamp.
+Neat.</p>
+<p>Maybe you aren&rsquo;t so familiar with YAML. That&rsquo;s not a problem, you can just use the current context to ask it some questions around the automation, like what does the opening <code>{{</code> and closing <code>}}</code> in the YAML mean?</p>
+<p>And if we really want to get in to the weeds, we can just keep asking it questions, like &ldquo;tell me more about template expressions&rdquo;.
+Just like that, it&rsquo;s telling me that it&rsquo;s a template expression, and it&rsquo;s using Jinja2. This is a useful feature, because it now means that we&rsquo;re fuelled with the knowledge of what it is, and we can make our future prompts more specific, which will generally give you better results.</p>
+<p>Ok, cool. So what else.</p>
+<p>Something that could be quite fiddly and hard to get right first time would be sending a notification to your phone from a camera in your home assistant instance.
+Let&rsquo;s see how well it fends here. Ok, it&rsquo;s given us the steps, and given us the YAML that we need for the automation. It&rsquo;s done a pretty decent job, it&rsquo;s definitely a good start, but I&rsquo;d like the have the notification open the reolink app on my Android phone. I can ask it how to do that..</p>
+<p>It&rsquo;s pretty impressive that it can get the package ID of the Reolink Android app. Even if you Google that, there&rsquo;s a reasonable amount of noise to sift through before you get the answer. If you ask Chat GPT that exact same question, there&rsquo;s a much clearer path to getting the answer.</p>
+<p>Both of those automations are pretty neat, but you can do even more.</p>
+<p>I have a setup that allows me to tap this kids button on my dashboard, which will power on the TV and choose a TV show for the kids to watch. A part of that script will pull up the keyboard on the TV and search for the show by effectively sending remote control commands to the TV. This basically means sending a lot of &ldquo;right&rdquo;, &ldquo;right&rdquo;, &ldquo;down&rdquo;, &ldquo;down&rdquo;, &ldquo;down&rdquo; commands, depending on what key you want to select on the keyboard. As you can imagine, it&rsquo;s quite a laborious task figuring out what combination of key presses are needed to punch in the text to search for a specific show, so I used Chat GPT to create some code that will generate the inputs.</p>
+<p>It uses the Android TV Home Assistant integration, and the commands that need to be sent are, for example, <code>DPAD_LEFT</code> to move left, and <code>DPAD_CENTER</code> to select.</p>
+<p>This is the prompt that I gave Chat GPT:</p>
+<pre tabindex="0"><code>Given the following table, write a script in javascript that will start at &#39;q&#39;,
+ and move one position for each selection of a letter. 
+For each new letter selection, it will start at q. 
+For each move, output the corresponding text:
+- for right, output &#34;- DPAD_RIGHT&#34;
+- for down, output &#34;- DPAD_DOWN&#34;
+
+| q   | w   | e   | r   | t   | y   | u   | i   | o   | p   |
+| a   | s   | d   | f   | g   | h   | j   | k   | l   |     |
+|     | z   | x   | c   | v   | b   | n   | m   |     |     |
+</code></pre><p>I expect the output of this prompt to generate the code which will let me paste in the outputs directly in to an automation.</p>
+<p>I chose Javascript, because there&rsquo;s a bunch of online websites where you can just paste in javascript code and have it immediately execute, without the need to install anything. I&rsquo;m going to run this in VSCode, as that&rsquo;s what I prefer, and this is just for educational purposes.</p>
+<p>This is the output that it produced. Looks pretty good to me, and I can just tweak the show at the end of the script if I want to generate the inputs for another show. Now all I need to do it go back over to the kids tv script, find one of the existing shows, grab the yaml, duplicate it, and paste in the output I copied.</p>
+<p>Just for kicks, we can also run the javascript code inside the LLM and get the output as well.</p>
+<p>Let&rsquo;s see if it worked.</p>
+<p>Looks good to me!</p>
+<p>This is a really broad topic, and I&rsquo;ve already made a video about how I use AI to turn on my porch light. I plan on covering a lot more on how AI can be used around your smart home, so if that&rsquo;s something that interests you, then be sure to subscribe.</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
