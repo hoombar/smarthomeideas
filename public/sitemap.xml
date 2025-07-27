@@ -3,7 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/troubleshooting-zigbee-networks/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/smart-doorbell-ai-announcements/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/smart-home-dashboard-tour-2025/</loc>
+    <lastmod>2025-05-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/using-chat-gpt-to-make-automations/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
@@ -13,6 +22,9 @@
   </url><url>
     <loc>http://localhost:1313/posts/govee-and-frigate-porch-light/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/spotify-music-playback-resume-after-announcement/</loc>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/boost-hot-water-while-exercising/</loc>
     <lastmod>2024-12-23T00:00:00+00:00</lastmod>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>test // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="test">
+  <meta name="twitter:description" content="Note: This is generated from a transcript from one of my YouTube videos
+This article provides a comprehensive guide to building and maintaining a robust and reliable ZigBee network for home automation. It covers essential topics from selecting the right hardware to advanced troubleshooting techniques using log files.
+Building a proper ZigBee network that functions reliably is crucial for effective home automation. Many users encounter challenges with existing mesh networks, leading to connectivity issues. This guide addresses these common problems by covering fundamental concepts and advanced diagnostic methods. Topics include the importance of coordinator placement, identifying and resolving errors in network logs, understanding coordinators, routers versus end devices, channel selection, and interference. Log files, often overlooked, play a key role in diagnosing network issues and establishing a solid setup. The information presented progresses from basic principles to more advanced techniques.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/test/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="test">
+  <meta property="og:description" content="Note: This is generated from a transcript from one of my YouTube videos
+This article provides a comprehensive guide to building and maintaining a robust and reliable ZigBee network for home automation. It covers essential topics from selecting the right hardware to advanced troubleshooting techniques using log files.
+Building a proper ZigBee network that functions reliably is crucial for effective home automation. Many users encounter challenges with existing mesh networks, leading to connectivity issues. This guide addresses these common problems by covering fundamental concepts and advanced diagnostic methods. Topics include the importance of coordinator placement, identifying and resolving errors in network logs, understanding coordinators, routers versus end devices, channel selection, and interference. Log files, often overlooked, play a key role in diagnosing network issues and establishing a solid setup. The information presented progresses from basic principles to more advanced techniques.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-27T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">test</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jul 27, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          9 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Note: <em>This is generated from a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<p>This article provides a comprehensive guide to building and maintaining a robust and reliable ZigBee network for home automation. It covers essential topics from selecting the right hardware to advanced troubleshooting techniques using log files.</p>
+<p>Building a proper ZigBee network that functions reliably is crucial for effective home automation. Many users encounter challenges with existing mesh networks, leading to connectivity issues. This guide addresses these common problems by covering fundamental concepts and advanced diagnostic methods. Topics include the importance of coordinator placement, identifying and resolving errors in network logs, understanding coordinators, routers versus end devices, channel selection, and interference. Log files, often overlooked, play a key role in diagnosing network issues and establishing a solid setup. The information presented progresses from basic principles to more advanced techniques.</p>
+<h2 id="understanding-your-zigbee-coordinator-the-networks-brain">Understanding Your ZigBee Coordinator: The Network&rsquo;s Brain</h2>
+<img src="frame_00056.jpg" alt="Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 56.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Understanding Your ZigBee Coordinator: The Network's Brain at 56.0s" onclick="openImageModal('frame_00056.jpg', 'Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 56.0s')">
+<img src="frame_00125.jpg" alt="Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 125.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Understanding Your ZigBee Coordinator: The Network's Brain at 125.0s" onclick="openImageModal('frame_00125.jpg', 'Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 125.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00189.jpg" alt="Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 189.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Coordinator: The Network's Brain at 189.0s" onclick="openImageModal('frame_00189.jpg', 'Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 189.0s')">
+<img src="frame_00200.jpg" alt="Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 200.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Coordinator: The Network's Brain at 200.0s" onclick="openImageModal('frame_00200.jpg', 'Understanding Your ZigBee Coordinator: The Network's Brain demonstration at 200.0s')">
+</div>
+The foundation of any reliable ZigBee network is its coordinator. The coordinator functions as the central processing unit, or "brain," of the entire ZigBee network. Selecting an inadequate coordinator can result in persistent connectivity problems for extended periods. Conversely, choosing a high-quality coordinator significantly enhances overall network stability and performance.
+<p>To ensure optimal network performance, thorough research is essential when selecting a coordinator. Avoid purchasing the cheapest USB stick available without proper investigation. It is recommended to review product compatibility, read community forums, and check user reviews. Investing a small amount more at this stage can prevent weeks of frustration later. For example, the SLZB 06M is a recommended power-over-Ethernet coordinator, known for its reliability and range. This device is not a USB stick but offers superior performance. It has proven to be exceptionally stable and provides excellent range.</p>
+<p>Even with the best coordinator, its physical placement is more critical than often perceived. Further details on placement will be discussed later. If a USB coordinator is in use, it is imperative to utilize a USB extension cable. This is because USB 3 ports can generate electromagnetic interference that disrupts the ZigBee channel. This is not a theoretical issue; demonstrations by Nabu Casa have shown that moving a USB cable closer to a coordinator can cause it to cease functioning. Such interference can lead to erratic and difficult-to-troubleshoot device drop-offs. Therefore, ensuring the use of a shielded USB extension cable is crucial. A simple extension cable is inexpensive and can prevent significant network instability.</p>
+<p>Position the coordinator away from USB 3 ports and ideally in a central location within the home. Consider the home&rsquo;s layout and the distribution of ZigBee devices. A central ground-floor location may not be effective if a significant portion of devices are located upstairs. If the coordinator is situated in the middle of the house surrounded by solid walls, be aware that 2.4 GHz signals may not penetrate these barriers effectively.</p>
+<p>While connecting devices directly to the coordinator might seem efficient, coordinators have a device limit. It is essential to consult the coordinator&rsquo;s documentation for its specific device capacity. This limitation is generally not an issue for new ZigBee networks with a few devices. However, as the network expands to 80 or more devices, performance problems may arise. The ultimate goal is to establish a robust mesh network.</p>
+<h2 id="optimizing-zigbee-channel-selection-for-minimal-interference">Optimizing ZigBee Channel Selection for Minimal Interference</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00226.jpg" alt="Optimizing ZigBee Channel Selection for Minimal Interference demonstration at 226.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Optimizing ZigBee Channel Selection for Minimal Interference at 226.0s" onclick="openImageModal('frame_00226.jpg', 'Optimizing ZigBee Channel Selection for Minimal Interference demonstration at 226.0s')">
+<img src="frame_00229.jpg" alt="Optimizing ZigBee Channel Selection for Minimal Interference demonstration at 229.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Optimizing ZigBee Channel Selection for Minimal Interference at 229.0s" onclick="openImageModal('frame_00229.jpg', 'Optimizing ZigBee Channel Selection for Minimal Interference demonstration at 229.0s')">
+</div>
+Proper channel selection from the outset can prevent significant troubleshooting efforts. ZigBee operates on the 2.4 GHz frequency band, which is shared with Wi-Fi, microwave ovens, and various other household electronics. The objective is to identify a ZigBee channel that minimizes clashes with other devices. To achieve this, utilize a tool like a Wi-Fi analyzer (links often provided in tutorial descriptions) to assess the surrounding 2.4 GHz Wi-Fi channel usage. The aim is to select a ZigBee channel that is as far as possible from busy Wi-Fi channels.
+<p>This decision is critical: if the ZigBee channel is changed after initial setup, every single device in the network will require re-pairing. This process is highly time-consuming and undesirable, especially for networks with 50 or more devices.</p>
+<h2 id="differentiating-zigbee-device-types-routers-vs-end-devices">Differentiating ZigBee Device Types: Routers vs. End Devices</h2>
+<img src="frame_00262.jpg" alt="Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 262.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Differentiating ZigBee Device Types: Routers vs. End Devices at 262.0s" onclick="openImageModal('frame_00262.jpg', 'Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 262.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00270.jpg" alt="Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 270.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Differentiating ZigBee Device Types: Routers vs. End Devices at 270.0s" onclick="openImageModal('frame_00270.jpg', 'Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 270.0s')">
+<img src="frame_00272.jpg" alt="Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 272.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Differentiating ZigBee Device Types: Routers vs. End Devices at 272.0s" onclick="openImageModal('frame_00272.jpg', 'Differentiating ZigBee Device Types: Routers vs. End Devices demonstration at 272.0s')">
+</div>
+To understand the integrity of a ZigBee network, it is essential to differentiate between the three primary device types: the coordinator (already discussed), routers, and end devices. Understanding their distinct roles is crucial for building a reliable network.
+<p><strong>Routers</strong> are typically devices that have a constant power supply. Examples include smart plugs, light switches, and smart bulbs. However, it is important to note that not all powered devices function as routers. Always consult the device&rsquo;s documentation to confirm its routing capabilities. Assuming all mains-powered devices are routers can be a dangerous assumption. Some manufacturers produce mains-powered devices that only act as end devices, which limits their utility in strengthening the mesh network. For instance, certain Eukara H1 light switches, despite being powered, do not function as routers.</p>
+<p><strong>End devices</strong> are typically battery-powered sensors, such as motion sensors, door sensors, and temperature sensors. These devices do not route traffic for other devices. They connect to the network and transmit their own data but do not forward packets for other devices.</p>
+<p>While devices can generally connect to any router within range, some devices can be particular about which routers they establish connections with. To optimize routing, it is beneficial to pair devices in their final installed position. Avoid pairing devices next to the coordinator and then relocating them across the house, as they may attempt to maintain the original, less optimal connection even if a better route is available nearby.</p>
+<h2 id="building-a-robust-zigbee-mesh-network">Building a Robust ZigBee Mesh Network</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00397.jpg" alt="Building a Robust ZigBee Mesh Network demonstration at 397.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building a Robust ZigBee Mesh Network at 397.0s" onclick="openImageModal('frame_00397.jpg', 'Building a Robust ZigBee Mesh Network demonstration at 397.0s')">
+<img src="frame_00410.jpg" alt="Building a Robust ZigBee Mesh Network demonstration at 410.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building a Robust ZigBee Mesh Network at 410.0s" onclick="openImageModal('frame_00410.jpg', 'Building a Robust ZigBee Mesh Network demonstration at 410.0s')">
+</div>
+The mesh network is where ZigBee's intelligence truly shines. ZigBee devices automatically form their mesh. However, a critical aspect often overlooked is that this process takes time. Network optimization can take not just hours or days, but sometimes weeks to fully establish. This waiting period can be challenging for users who expect immediate perfect functionality. Devices continuously learn about each other, determine optimal routes, and adapt to environmental changes. Patience is absolutely essential during this phase.
+<p>A common troubleshooting challenge arises from &ldquo;sticky&rdquo; devices, such as certain Aqara devices. These devices tend to latch onto the first router they connect to and may refuse to switch to a stronger, more optimal router, even if the signal strength is poor. This behavior underscores the importance of pairing such devices in their final installed location. Additionally, avoid overloading individual routers, as they have limits on the number of devices they can handle.</p>
+<p>For advanced users, it is possible to pair end devices with specific routers. For example, Zigbee2MQTT offers an option to open pairing on the network for specific devices, which can be highly beneficial for fine-tuning the mesh. It is highly recommended to explore this feature.</p>
+<h2 id="advanced-troubleshooting-leveraging-zigbee-log-files">Advanced Troubleshooting: Leveraging ZigBee Log Files</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00439.jpg" alt="Advanced Troubleshooting: Leveraging ZigBee Log Files demonstration at 439.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Advanced Troubleshooting: Leveraging ZigBee Log Files at 439.0s" onclick="openImageModal('frame_00439.jpg', 'Advanced Troubleshooting: Leveraging ZigBee Log Files demonstration at 439.0s')">
+<img src="frame_00461.jpg" alt="Advanced Troubleshooting: Leveraging ZigBee Log Files demonstration at 461.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Advanced Troubleshooting: Leveraging ZigBee Log Files at 461.0s" onclick="openImageModal('frame_00461.jpg', 'Advanced Troubleshooting: Leveraging ZigBee Log Files demonstration at 461.0s')">
+</div>
+A key differentiator between novice and advanced users is the ability to interpret log files. While often ignored, logs provide a detailed narrative of network activity. Understanding how to read them significantly simplifies troubleshooting.
+<p>A typical ZigBee setup includes a database of all devices, a configuration file mapping device IDs to friendly names, and the log file where all network events are recorded. For instance, if the logs display frequent &ldquo;root error many to one failures,&rdquo; this indicates a recurring issue. Manually sifting through numerous log instances to determine the frequency and source of such errors is impractical.</p>
+<p>To efficiently analyze these errors, the process involves:</p>
+<ol>
+<li><strong>Identifying the Device ID:</strong> Extracting the unique ID (IEEE address) associated with the error from the log file.</li>
+<li><strong>Mapping to Friendly Name:</strong> Using the configuration or database to map the IEEE address to a user-friendly device name (e.g., &ldquo;Snug LED Vance socket&rdquo;). This allows for direct identification of the problematic device. The system shows the IEEE address, which can then be used to look up the friendly name. For example, an error associated with a specific ID can be traced back to the &ldquo;Snug LED Vance socket.&rdquo;</li>
+</ol>
+<p>To automate this analysis, artificial intelligence (AI) tools can be leveraged. For example, an AI model like Claude can be used. The process involves:</p>
+<ol>
+<li><strong>Uploading Data:</strong> Uploading historical log files, configurations, and database snapshots.</li>
+<li><strong>Prompting the AI:</strong> Providing a prompt instructing the AI to identify specific errors (e.g., &ldquo;root error many to one failures&rdquo;) across the uploaded logs and configurations. The prompt should also request the AI to perform the mapping from device IDs to friendly names.</li>
+<li><strong>Receiving Analysis:</strong> The AI processes the data and generates an artifact. This output typically includes the friendly name of the device, its IEEE address, the type of error, its criticality, and its frequency in the logs.</li>
+<li><strong>Leveraging Insights:</strong> This automated analysis allows users to quickly understand network issues.</li>
+</ol>
+<p>The system displays the friendly name, the IEEE address, and details about the errors, including their criticality and frequency. This capability can be easily leveraged to diagnose network problems.</p>
+<p>After implementing fixes, a new analysis can be performed on updated logs and configurations. The system will show significantly lower error counts, indicating successful remediation. For instance, only very low-severity errors might remain, some of which could be transient issues like configuration timeouts during startup. The AI can also provide recommendations and confirm that certain issues are minor or transient. This confirms that the cleanup was highly successful.</p>
+<p>In summary, while manual log review provides hints, AI tools can enumerate instances and guide the next steps for troubleshooting.</p>
+<h2 id="conclusion-key-principles-for-a-reliable-zigbee-network">Conclusion: Key Principles for a Reliable ZigBee Network</h2>
+<p>Building a reliable ZigBee network is achievable but requires patience and a fundamental understanding of how these devices interact.</p>
+<p>To establish a robust network:</p>
+<ul>
+<li><strong>Start with a high-quality coordinator.</strong></li>
+<li><strong>Carefully select your ZigBee channel</strong> to avoid interference.</li>
+<li><strong>Understand the distinction between routers and end devices</strong> and their roles in the mesh.</li>
+<li><strong>Regularly review your network logs</strong> for insights into performance and issues.</li>
+</ul>
+<p>Adhering to these principles will result in an incredibly reliable, responsive, and functional smart home network. Neglecting these steps can lead to persistent connectivity problems, diminishing the benefits of smart home technology.</p>
+<p>If this guide has been helpful, consider sharing it with others who might benefit. For any ZigBee challenges or additional insights, please provide feedback. Your input is valuable and can contribute to future educational content. Happy automating!</p>
+<h1 id="links">Links:</h1>
+<ul>
+<li></li>
+</ul>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/uuid-link?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="transcript">Transcript</h1>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+<!-- Image Modal for Click-to-Enlarge -->
+<div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); cursor: pointer;" onclick="closeImageModal()">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
+        <img id="modalImage" src="" alt="" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <div id="modalCaption" style="color: white; text-align: center; margin-top: 10px; font-size: 16px;"></div>
+    </div>
+    <span style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none;" onclick="closeImageModal()">&times;</span>
+</div>
+<script>
+function openImageModal(src, alt) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalCaption').textContent = alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

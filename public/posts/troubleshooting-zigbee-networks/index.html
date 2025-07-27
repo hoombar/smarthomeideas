@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Troubleshooting zigbee networks // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Troubleshooting zigbee networks">
+  <meta name="twitter:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home Want to build a proper ZigBee network that actually works reliably? Or perhaps you&#39;re currently battling an existing mesh network that&#39;s giving you headaches. Either way, you&#39;re in the right place! Today, I&#39;m going to cover everything from the absolute basics, like why your coordinator&#39;s placement matters, all the way through to enumerating errors in your logs. We&#39;ll discuss coordinators, routers versus end devices, channel selection, interference, and yes, we&#39;ll even dive into log files. People often tend to ignore these, but they play a key role in diagnosing issues and building a rock-solid setup. As we go on, the topics will get progressively more advanced, so let&#39;s dive in! The Foundation: Your ZigBee Coordinator Let&#39;s dive straight into the foundation: your coordinator. I can&#39;t stress this enough: the coordinator is basically the brain of your entire ZigBee network. Pick a poor one, and you&#39;re going to be fighting connectivity issues for months. Pick a good one, and everything just works – well, kind of. We&#39;ll get into that! When it comes to choosing a coordinator, you really need to do your research. Don’t just grab the first USB stick you find on Amazon because it’s cheap. Read reviews, check compatibility, and look at community forums. The few extra pounds you spend here will save you weeks of frustration later. What I’m using right now is the SLZB-06M. I’ll pop the link down in the description for that. It’s actually not a USB stick; it’s a Power over Ethernet (PoE) coordinator, and I absolutely love it. I would highly recommend them. It’s been absolutely rock-solid for me, and the range is fantastic.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/troubleshooting-zigbee-networks/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Troubleshooting zigbee networks">
+  <meta property="og:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home Want to build a proper ZigBee network that actually works reliably? Or perhaps you&#39;re currently battling an existing mesh network that&#39;s giving you headaches. Either way, you&#39;re in the right place! Today, I&#39;m going to cover everything from the absolute basics, like why your coordinator&#39;s placement matters, all the way through to enumerating errors in your logs. We&#39;ll discuss coordinators, routers versus end devices, channel selection, interference, and yes, we&#39;ll even dive into log files. People often tend to ignore these, but they play a key role in diagnosing issues and building a rock-solid setup. As we go on, the topics will get progressively more advanced, so let&#39;s dive in! The Foundation: Your ZigBee Coordinator Let&#39;s dive straight into the foundation: your coordinator. I can&#39;t stress this enough: the coordinator is basically the brain of your entire ZigBee network. Pick a poor one, and you&#39;re going to be fighting connectivity issues for months. Pick a good one, and everything just works – well, kind of. We&#39;ll get into that! When it comes to choosing a coordinator, you really need to do your research. Don’t just grab the first USB stick you find on Amazon because it’s cheap. Read reviews, check compatibility, and look at community forums. The few extra pounds you spend here will save you weeks of frustration later. What I’m using right now is the SLZB-06M. I’ll pop the link down in the description for that. It’s actually not a USB stick; it’s a Power over Ethernet (PoE) coordinator, and I absolutely love it. I would highly recommend them. It’s been absolutely rock-solid for me, and the range is fantastic.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-19T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Troubleshooting zigbee networks</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jul 19, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          11 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Note: <em>This is generated from a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="troubleshooting-your-zigbee-network-a-comprehensive-guide-to-building-a-rock-solid-smart-home">Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home</h1>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00082.jpg" alt="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 82.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home at 82.0s" onclick="openImageModal('frame_00082.jpg', 'Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 82.0s')">
+<img src="frame_00125.jpg" alt="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 125.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home at 125.0s" onclick="openImageModal('frame_00125.jpg', 'Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 125.0s')">
+</div>
+<img src="frame_00189.jpg" alt="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 189.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home at 189.0s" onclick="openImageModal('frame_00189.jpg', 'Troubleshooting Your ZigBee Network: A Comprehensive Guide to Building a Rock-Solid Smart Home demonstration at 189.0s')">
+Want to build a proper ZigBee network that actually works reliably? Or perhaps you're currently battling an existing mesh network that's giving you headaches. Either way, you're in the right place! Today, I'm going to cover everything from the absolute basics, like why your coordinator's placement matters, all the way through to enumerating errors in your logs. We'll discuss coordinators, routers versus end devices, channel selection, interference, and yes, we'll even dive into log files. People often tend to ignore these, but they play a key role in diagnosing issues and building a rock-solid setup. As we go on, the topics will get progressively more advanced, so let's dive in!
+<h2 id="the-foundation-your-zigbee-coordinator">The Foundation: Your ZigBee Coordinator</h2>
+<img src="frame_00053.jpg" alt="The Foundation: Your ZigBee Coordinator demonstration at 53.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="The Foundation: Your ZigBee Coordinator at 53.0s" onclick="openImageModal('frame_00053.jpg', 'The Foundation: Your ZigBee Coordinator demonstration at 53.0s')">
+Let's dive straight into the foundation: your coordinator. I can't stress this enough: the coordinator is basically the brain of your entire ZigBee network. Pick a poor one, and you're going to be fighting connectivity issues for months. Pick a good one, and everything just works – well, kind of. We'll get into that!
+<p>When it comes to choosing a coordinator, you really need to do your research. Don&rsquo;t just grab the first USB stick you find on Amazon because it&rsquo;s cheap. Read reviews, check compatibility, and look at community forums. The few extra pounds you spend here will save you weeks of frustration later. What I&rsquo;m using right now is the SLZB-06M. I&rsquo;ll pop the link down in the description for that. It&rsquo;s actually not a USB stick; it&rsquo;s a Power over Ethernet (PoE) coordinator, and I absolutely love it. I would highly recommend them. It&rsquo;s been absolutely rock-solid for me, and the range is fantastic.</p>
+<p>But here&rsquo;s the thing: even if you&rsquo;ve got the best coordinator in the world, placement matters more than you might think. We&rsquo;ll cover that a little bit more later on.</p>
+<h3 id="usb-coordinators-the-extension-cable-is-your-best-friend">USB Coordinators: The Extension Cable is Your Best Friend</h3>
+<p>If you&rsquo;re using a USB coordinator, and many people are, you absolutely need to use a USB extension cable. Why? Because USB 3 ports can cause electromagnetic interference (EMI) with your ZigBee channel. This isn&rsquo;t some theoretical problem either; it&rsquo;s actually real. There&rsquo;s a really good video demonstrated by the people at Nabu Casa that shows moving a USB cable closer to a coordinator can actually stop it from working. This is the sort of thing that will drive you absolutely mad, trying to figure out why your devices keep dropping offline. It&rsquo;s going to be very erratic and difficult to troubleshoot. So, definitely make sure you&rsquo;re using a shielded extension cable. A simple extension cable costs next to nothing, and it can literally save your entire network.</p>
+<h3 id="optimal-coordinator-placement">Optimal Coordinator Placement</h3>
+<p>Get your coordinator away from USB 3 ports and ideally somewhere central in your home. Think about your home&rsquo;s layout: where are the devices actually going to be, and what&rsquo;s going to be between them? A central location on the ground floor might not help much if half of your devices are upstairs. If the middle of your house is surrounded by solid walls, then consider that 2.4 GHz signals might not travel through them particularly well.</p>
+<h3 id="understanding-coordinator-device-limits">Understanding Coordinator Device Limits</h3>
+<p>Now, here&rsquo;s something that catches a lot of people out: connecting directly to your coordinator might seem fast and like a good idea, but be aware there is a device limit on coordinators. You should check the documentation for your specific coordinator to find its exact device limit. This is generally okay when you&rsquo;re just starting out with your ZigBee network and you&rsquo;ve got a handful of devices, but if you get the bug and end up with 80 devices on your network, you&rsquo;ll start to see problems. What you&rsquo;re ultimately aiming for is a mesh network.</p>
+<h2 id="channel-selection-avoid-interference">Channel Selection: Avoid Interference</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00226.jpg" alt="Channel Selection: Avoid Interference demonstration at 226.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Channel Selection: Avoid Interference at 226.0s" onclick="openImageModal('frame_00226.jpg', 'Channel Selection: Avoid Interference demonstration at 226.0s')">
+<img src="frame_00229.jpg" alt="Channel Selection: Avoid Interference demonstration at 229.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Channel Selection: Avoid Interference at 229.0s" onclick="openImageModal('frame_00229.jpg', 'Channel Selection: Avoid Interference demonstration at 229.0s')">
+</div>
+Let's talk about something that will save you massive headaches if you get it right from the start: channel selection. ZigBee works on 2.4 GHz, which is the same frequency as your Wi-Fi, your microwave, and half the electronics in your house. The key is finding a channel that doesn't clash with everything else.
+<p>Use an app like Wi-Fi Analyzer (again, there&rsquo;s a link down in the description) to check what channels your surrounding 2.4 GHz Wi-Fi networks are using. You want to pick a ZigBee channel that&rsquo;s as far away from busy Wi-Fi channels as possible. Here&rsquo;s the critical bit: make the decision at the start. If you change your ZigBee channel later, you&rsquo;ll have to re-pair every single device in your network, and trust me, you don&rsquo;t want to have to do that with 50-plus devices!</p>
+<h2 id="understanding-your-zigbee-devices-coordinator-routers-and-end-devices">Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00261.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 261.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 261.0s" onclick="openImageModal('frame_00261.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 261.0s')">
+<img src="frame_00262.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 262.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 262.0s" onclick="openImageModal('frame_00262.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 262.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00270.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 270.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 270.0s" onclick="openImageModal('frame_00270.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 270.0s')">
+<img src="frame_00272.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 272.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 272.0s" onclick="openImageModal('frame_00272.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 272.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00297.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 297.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 297.0s" onclick="openImageModal('frame_00297.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 297.0s')">
+<img src="frame_00303.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 303.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 303.0s" onclick="openImageModal('frame_00303.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 303.0s')">
+</div>
+<img src="frame_00314.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 314.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 314.0s" onclick="openImageModal('frame_00314.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 314.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00397.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 397.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 397.0s" onclick="openImageModal('frame_00397.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 397.0s')">
+<img src="frame_00411.jpg" alt="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 411.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices at 411.0s" onclick="openImageModal('frame_00411.jpg', 'Understanding Your ZigBee Devices: Coordinator, Routers, and End Devices demonstration at 411.0s')">
+</div>
+Now, let's get into the integrity of how the network actually works. You've got three types of devices: your coordinator (which we've covered), and you've also got routers and end devices. Understanding the difference is crucial for a reliable network.
+<h3 id="routers">Routers</h3>
+<p>Routers are typically devices that have constant power, such as your smart plugs, light switches, and smart bulbs. Be careful, though, because not all powered devices are routers. You should definitely check the documentation for that; it&rsquo;s a dangerous assumption to make that all powered devices will be routers. Some manufacturers make mains-powered devices that only act as end devices, which is pretty useless for building a strong mesh network. I got caught out here by buying some of the Aqara H1 light switches, assuming that they would work as routers.</p>
+<h3 id="end-devices">End Devices</h3>
+<p>End devices are your battery-powered sensors, like motion sensors, door sensors, temperature sensors, and that kind of stuff. These little guys don&rsquo;t route traffic like other devices. They just connect to your network and send their data, but they won&rsquo;t route packets to other devices.</p>
+<h3 id="device-pairing-and-mesh-formation">Device Pairing and Mesh Formation</h3>
+<p>Typically, devices can connect to any router in range. Some devices can be quite picky about which routers they connect to, though. If you try and pair your device in its final position, that tends to help with the routing. Don&rsquo;t pair them next to your coordinator and then move them across the house; they&rsquo;ll try and maintain the original connection even if there&rsquo;s a better route nearby.</p>
+<p>Now, the mesh itself is where ZigBee gets really clever. ZigBee devices form their mesh automatically. It sounds great, but here&rsquo;s something that most people don&rsquo;t realize: it takes time. And I&rsquo;m not just talking hours or even days, but some ZigBee networks can take weeks to establish themselves so that they&rsquo;re fully optimized. This is probably the hardest part for most people because everyone wants things to work perfectly right away, but your devices are constantly learning about each other, figuring out the best routes, and adapting to changes in their environment. Patience is absolutely key here.</p>
+<p>Something that may well save you hours of troubleshooting is knowing that some devices are what I call &ldquo;sticky.&rdquo; Aqara devices are notorious for this. They latch onto the first router they connect to and refuse to jump to a better router, even if the signal strength is terrible. That&rsquo;s why pairing in the final position for these kinds of devices is especially important.</p>
+<p>Don&rsquo;t overload routers either. They have limits on how many devices they can handle, typically. The good news is you can actually pair end devices with specific routers if you know what you&rsquo;re doing. I use Zigbee2MQTT, and there&rsquo;s an option to open up pairing on the network for specific devices, so I highly encourage trying that out.</p>
+<h2 id="deep-dive-into-log-files-your-troubleshooting-superpower">Deep Dive into Log Files: Your Troubleshooting Superpower</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00438.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 438.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 438.0s" onclick="openImageModal('frame_00438.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 438.0s')">
+<img src="frame_00456.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 456.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 456.0s" onclick="openImageModal('frame_00456.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 456.0s')">
+</div>
+<img src="frame_00535.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 535.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 535.0s" onclick="openImageModal('frame_00535.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 535.0s')">
+<img src="frame_00570.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 570.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 570.0s" onclick="openImageModal('frame_00570.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 570.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00601.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 601.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 601.0s" onclick="openImageModal('frame_00601.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 601.0s')">
+<img src="frame_00618.jpg" alt="Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 618.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Log Files: Your Troubleshooting Superpower at 618.0s" onclick="openImageModal('frame_00618.jpg', 'Deep Dive into Log Files: Your Troubleshooting Superpower demonstration at 618.0s')">
+</div>
+Okay, this is what separates the beginners from the advanced users: deep diving into log files. Most people tend to ignore their logs, but the logs are basically telling you a story about what's happening on your network, and trust me, once you know how to read them, troubleshooting becomes so much easier.
+<p>Let me show you an example. Here, I have the entire database with all of the ZigBee devices in it. We&rsquo;ve got the configuration, which basically gives us a mapping of those ZigBee devices over to a friendly name, and we have the log file, which is where all the fun things are happening.</p>
+<p>If we look at a &ldquo;root error many-to-one failures&rdquo; entry, we can see this as an example of one of the things that&rsquo;s going wrong. You&rsquo;ll observe it happens quite a lot throughout the logs, and this is one of the things we wanted to dive into. But there are all of these log file instances, and we don&rsquo;t really want to go through and manually figure out how often this is happening.</p>
+<p>So, what we&rsquo;re going to do is take the log file, and we&rsquo;re going to use the ID that we get from here. We&rsquo;ll figure out from that ID what the specific device is. That will tell us it&rsquo;s this particular manufacturing device or a device with this manufacturing name. It&rsquo;s going to give us an IEEE address, and then we can use that IEEE address to look up in the database what the friendly name is. For instance, you might find it&rsquo;s the &ldquo;Snug LED Vance socket.&rdquo; So, we can map this error, which happens a lot for this particular ID, all the way back to the Snug LED Vance socket.</p>
+<p>I don&rsquo;t want to do that manually, so I&rsquo;m going to use my friend Claude (an AI assistant). Here&rsquo;s what I made earlier: What I&rsquo;ve done is uploaded a bunch of some of the old log files and the old configurations so you can see it before and after. I&rsquo;ve basically taken this prompt and said, &ldquo;Using the old logs, the old configurations, and the old database, find this particular error and various other errors, and then go through and basically do all of that mapping.&rdquo; This way, we can figure out what it looks like.</p>
+<p>The AI will go through and do its magic, and we&rsquo;re basically going to get an artifact that will tell us what the friendly name is, the IEEE address, and basically the errors and how critical those errors are, how often they&rsquo;re occurring in the logs, and stuff like that. So, you can leverage this quite easily to figure out what&rsquo;s going on with your network.</p>
+<p>I also used, after I basically went through and fixed a bunch of my issues, the newer version of my network. I ran the same analysis and basically got a similar result, but you can see here the numbers are much lower. There are basically only some very, very low severity errors. Some of them were actually due to things like configuration timeouts, and Claude is very useful here and basically tells me this is not much of an issue. It&rsquo;s a fairly transient issue that happens during startup, and it&rsquo;s going to tell me a few recommendations. In conclusion, the cleanup was highly successful – brilliant! So, I&rsquo;m still going to use the logs, and I&rsquo;m going to look through the logs to get some hints on what I might be looking for, and then I&rsquo;m just going to use AI to help me enumerate those instances and figure out what needs to happen next.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Look, building a reliable ZigBee network isn&rsquo;t rocket science, but it does require a bit of patience and understanding of how these devices actually work together. Start with a good coordinator, choose your channels carefully, understand the difference between routers and end devices, and most importantly, learn to read your logs. Do this right, and you&rsquo;ll have a great network that&rsquo;s incredibly reliable, responsive, and just works. Get it wrong, and you&rsquo;ll be constantly fighting connectivity issues and wondering why your smart home feels like a dumb home.</p>
+<p>If this video helped you out, don&rsquo;t forget to hit that like button and subscribe for more smart home content. Check out the description for links I mentioned, and leave a comment down below: what&rsquo;s your biggest ZigBee challenge? Did I cover everything? Do you think I missed anything? Let me know! I read every comment, and I often turn them into future videos, so don&rsquo;t be shy. Until next time, happy automating, and I&rsquo;ll catch you in the next one!</p>
+<h1 id="links">Links:</h1>
+<p>Here are some of the zigbee devices I&rsquo;m using in my network:</p>
+<ul>
+<li>Innr smart plugs - <a href="https://amzn.to/44EqjDC">https://amzn.to/44EqjDC</a></li>
+<li>Sonoff USB coordinator - <a href="https://amzn.to/4lyLA7x">https://amzn.to/4lyLA7x</a></li>
+<li>Candeo dimmer switches - <a href="https://amzn.to/4lCR957">https://amzn.to/4lCR957</a></li>
+<li>LEDVance smart plug - <a href="https://amzn.to/44U9zH7">https://amzn.to/44U9zH7</a></li>
+<li>Aqara vibration sensors - <a href="https://s.click.aliexpress.com/e/_omTArqA">https://s.click.aliexpress.com/e/_omTArqA</a></li>
+<li>Tuya motion sensors - <a href="https://s.click.aliexpress.com/e/_o2EC0dY">https://s.click.aliexpress.com/e/_o2EC0dY</a></li>
+<li>Tuya buttons - <a href="https://s.click.aliexpress.com/e/_olnvxnY">https://s.click.aliexpress.com/e/_olnvxnY</a></li>
+<li>Tuya contact sensors - <a href="https://s.click.aliexpress.com/e/_oDzeGXy">https://s.click.aliexpress.com/e/_oDzeGXy</a></li>
+<li>Aqara motion sensors - <a href="https://s.click.aliexpress.com/e/_onEYiiw">https://s.click.aliexpress.com/e/_onEYiiw</a></li>
+<li>Aqara buttons - <a href="https://s.click.aliexpress.com/e/_ooUGcXy">https://s.click.aliexpress.com/e/_ooUGcXy</a></li>
+<li>Aqara door sensors - <a href="https://s.click.aliexpress.com/e/_oB3h0gI">https://s.click.aliexpress.com/e/_oB3h0gI</a></li>
+</ul>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/hksjJxe2hcY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+<!-- Image Modal for Click-to-Enlarge -->
+<div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); cursor: pointer;" onclick="closeImageModal()">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
+        <img id="modalImage" src="" alt="" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <div id="modalCaption" style="color: white; text-align: center; margin-top: 10px; font-size: 16px;"></div>
+    </div>
+    <span style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none;" onclick="closeImageModal()">&times;</span>
+</div>
+<script>
+function openImageModal(src, alt) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalCaption').textContent = alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+<!-- Transcript Toggle Functionality -->
+<div id="contentToggle" style="position: fixed; top: 20px; right: 20px; z-index: 999; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px;">
+    <button id="toggleBtn" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+        Toggle Transcript
+    </button>
+</div>
+<script>
+let showingTranscript = false;
+const toggleBtn = document.getElementById('toggleBtn');
+
+// Store transcript data for sections
+const transcriptData = [["Right, so you want to know how to build a proper Zigbee network that actually works reliably, or maybe you're doing battle with your current existing mesh network. Either way, you're in the right place because today we're going to cover everything from", "the absolute basics, like why your coordinates placement matters, all the way through to numerating errors in your logs. We'll talk coordinators, routers versus end devices, channel selection, interference, and yes, we'll even dive into log files which", "often people tend to ignore but they play a key role in diagnosing a shins and building a block solid setup. So as the video goes on, topics are going to get progressively more advanced. Let's dive straight into the foundation, your coordinator. Now, I can't stress this enough.", "The coordinators basically the brain of your entire Zigbee network. Pick a rubbish one and you're going to be fighting connectivity issues for months. Pick a good one and everything just works. Well, kind of. We'll get into that.", "So when it comes to choosing a coordinator, do your research and I mean properly research it. Don't just grab the first USB stick you find on Amazon because it's cheap. Read reviews, check compatibility, look at the community forums. The few extra pounds that you spend here", "is going to save you weeks of frustration later. What I'm using right now is the SLZB 06M. I'll pop the link down in the description for that. It's actually not a USB stick."], ["I'll pop the link down in the description for that. It's actually not a USB stick. It's a power over Ethernet coordinator and I absolutely love it. I would highly recommend them. It's been absolutely rock solid for me and the range is fantastic but here's the thing. Even if", "you've got the best coordinator in the world, placement matters more than you might think. We'll cover that a little bit more later on in the video. If you're using a USB coordinator and there's lots of people out there who are, you absolutely need to use a USB extension cable. Why? Because", "USB 3 ports can cause electromagnetic interference through your Zigbee channel. This isn't some theoretical problem either. It's actually real. There's a really good video that was demonstrated by the people at Nabakaza who show that moving USB cable closer to a coordinator actually stops it", "from working. This is the sort of thing that will drive you absolutely mad, trying to figure out why your devices keep on dropping off line and it's going to be very erratic and difficult to troubleshoot. So definitely make sure that you're using a shielded extension cable. A simple", "extension cable costs next to nothing and it can literally save your entire network. Get the USB 3 ports and ideally somewhere central in your home. Think about your home's layout. Where are the devices actually going to be and what's going to be between them. A central location on", 'the ground floor might not help much if half of your devices are upstairs. In the middle of your house is surrounded by solid walls then considered at 2.4 gigahertz signals might not travel through them'], ["house is surrounded by solid walls then considered at 2.4 gigahertz signals might not travel through them particularly well. Now here's something that catches a lot of people out. Connecting directly to your coordinator might seem fast and like a good idea but be aware there is a device limit on coordinators.", "You should check the documentation exactly for what the device limit is on your coordinator. This is generally okay when you're just starting out in your Zigbee network and you've got a handful of devices on them but if you get the bug and you end up with 80 devices on your network", "you'll start to see problems. What you're ultimately aiming for is a mesh network. Right let's talk about something that will save you massive headaches if you get it right from the start which is channel selection. Zigbee works on 2.4 gigahertz which is the same frequency as your Wi-Fi,", "your microwave and half the electronics in your house. The key is finding the channel doesn't clash with everything else. Use an app like Wi-Fi analyzer. Again there's a link down in the description to check what channels you're surrounding 2.4 gigahertz Wi-Fi they're using. You want to pick a Zigbee", "channel that's far away from busy Wi-Fi channel as possible. Here's the critical bit. Make the decision at the start. If you change your Zigbee channel later you'll have to repair every single device in your network and trust me you don't want to have to do that with 50 plus devices.", "Now let's get into the integrity of how the network actually works. You've got three types of devices. You've got your coordinator which we've covered and you've also got routers and end"], ["devices. You've got your coordinator which we've covered and you've also got routers and end devices. Understanding the difference is crucial for a reliable network. Routers are typically devices that have constant power so your smart plugs, your light switches, your smart bulbs.", "Be careful though because not all powered devices are routers. You should definitely check the documentation for that and it's a dangerous assumption to make that all powered devices will be routers. Some manufacturers make mains powered devices that only act as end devices which is pretty", 'useless for building a strong mesh network. I got caught out here by buying some of the Eukara H1 light switches assuming that they would work as routers. End devices are your battery powered sensors like motion sensors, door sensors, temperature sensors, that kind of stuff. These little guys', "don't route traffic like other devices. They just connect your network and send their data but they won't route packets to other devices. Typically devices can connect to any router in range. Some bit can be quite picky about which routers they connect to though. If you try and pair your device", "in their final position that tends to help with the routing. Don't pair them next to your coordinator and then move them across the house. They'll try and maintain the original connection even if there's a better route nearby. Now the mesh itself is where ZigBee gets really clever.", "ZigBee devices form their mesh automatically. It sounds great and furry. There's something that most people don't realise though. It takes time and I'm not just talking hours or even days but"], ["most people don't realise though. It takes time and I'm not just talking hours or even days but some ZigBee networks can take weeks to establish themselves so that they're fully optimised. This is probably the hardest part for most people because everyone wants things to work perfectly", 'right away but your devices are constantly learning about each other and figuring out the best routes and adapting changes in their environment. Patience is absolutely key here. Something that may well save you hours of troubleshooting is knowing that some devices are', "what I call sticky so a car or devices in the tourist for this. They latch onto the first router they connect to and they're refused to jump to a better router even if the signal strength is terrible. That's why pairing in the final position for these kind of devices is especially", "important. Don't overload routers either. They have limits on how many devices they can handle typically. The good news is you can actually pair and devices with specific routers if you know what you're doing. I use ZigBee to MQTT and there's an option to open up pairing on the network for", "specific devices so I highly encourage trying that out. Okay this is what separates the beginners from the advanced users is deep diving into log files. Most people will tend to ignore their logs but the logs are basically telling me a story about what's happening on your network and trust me once", "you know how to read them troubleshooting becomes so much more easy. Okay so here we have the entire database with all of the ZigBee devices in. We've got the configuration which will basically give us"], ["database with all of the ZigBee devices in. We've got the configuration which will basically give us a mapping of those ZigBee devices over to a friendly name and we have the log file which is where all the fun things are happening. So if we look at the root error many to one failures and we look at", "this as an example of one of the things that's going wrong. You can see it happens quite a lot throughout the logs and this is one of the things that we wanted to dive into but there is all of these log file instances and we don't really want to go through and manually figure out how often", "this is happening. So what we're going to do is take the log file and we're going to use the ID that we get from here and we're going to figure out from here what that ID is and that will tell us it's this particular manufacturing device or device with this manufacturing name it's going to give", "us an i-triple address and then we can use that i-triple address to look up in here what the friendly name is so you can see here it's the snug LED Vance socket so we can map this error which happens a lot for this particular ID all the way back to the snug LED Vance socket. So I don't"], ["which happens a lot for this particular ID all the way back to the snug LED Vance socket. So I don't want to do that manually so I'm going to use my friend Claude and here's what I made earlier. What I've done is I've uploaded a bunch of some of the old log files and the old configurations", "so you can see it before and after and I've taken basically this prompt and I've said using the old logs the old configurations and the old database find this particular error and various other errors and then go through and basically do all of that mapping so we can figure out what it looks like.", "It's going to go through and do its magic and we're basically going to get this artifact and it's going to tell us what the friendly name is the i-triple address and basically the errors and how critical those errors are, how often they're occurring in the logs and stuff like that.", "So you can leverage this quite easily to figure out what's going on with your network. I also used, I'll go back to my network, the newer version after I've basically gone through and fixed a bunch of my issues and I ran the same analysis and basically got a similar result", "but you can see here the numbers are much lower. There's basically only some very very low severity errors. Some of them were actually due to things like configuration timeouts and Claude's going to be very useful here and basically tell me this is basically not much an issue."], ["Claude's going to be very useful here and basically tell me this is basically not much an issue. It's a fairly transient issue that happens during startup and it's going to tell me a few recommendations and in conclusion the cleanup was highly successful, brilliant. So I'm still going", "to use the logs and I'm going to look through the logs to get some hints on what I might be looking for and then I'm just going to use AI to help me enumerate those instances and figure out what needs to happen next. Look, building a reliable Zigbee network isn't rocket science but it does require", "a bit of patience and understanding on how these devices actually work together. Start with a coordinator, choose your channels carefully, understand the difference between routers and end devices and most importantly, let them read your logs. Do this right and you'll", "have a great network that's incredibly reliable, responsive and just works. Get it wrong and you'll be constantly fighting connectivity issues and wondering why your smart home feels like a dumb home. If this video helped you out don't forget to hit that like button and subscribe for more smart", "home content. Check out the description for links I mentioned and leave a comment down below, what's your biggest Zigbee challenge, did I cover everything, do you think I missed anything, let me know. I read every comment and I often turn them into future videos so don't be shy.", "Until next time, happy automating and I'll catch you in the next one."]];
+
+// Store original content for each section
+const originalSectionContent = {};
+
+// Initialize: find all sections and store their original content
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    sections.forEach((header, index) => {
+        // Find all content between this header and the next header
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                sectionContent.push(nextElement);
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        // Store original content for each paragraph in this section
+        const sectionId = header.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        originalSectionContent[sectionId] = [];
+        
+        sectionContent.forEach(element => {
+            originalSectionContent[sectionId].push({
+                element: element,
+                originalHTML: element.innerHTML
+            });
+        });
+    });
+});
+
+toggleBtn.addEventListener('click', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    
+    sections.forEach((header, sectionIndex) => {
+        const sectionTitle = header.textContent.trim();
+        const sectionId = sectionTitle.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        
+        // Find paragraphs in this section
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                // Skip image containers
+                if (!nextElement.querySelector('img') && nextElement.innerText.trim().length > 20) {
+                    sectionContent.push(nextElement);
+                }
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        if (showingTranscript) {
+            // Switch back to formatted content
+            if (originalSectionContent[sectionId]) {
+                originalSectionContent[sectionId].forEach(item => {
+                    item.element.innerHTML = item.originalHTML;
+                });
+            }
+        } else {
+            // Switch to transcript content
+            const transcriptForSection = transcriptData[sectionIndex] || [];
+            
+            sectionContent.forEach((element, paragraphIndex) => {
+                if (transcriptForSection[paragraphIndex]) {
+                    element.innerHTML = transcriptForSection[paragraphIndex];
+                }
+            });
+        }
+    });
+    
+    showingTranscript = !showingTranscript;
+    toggleBtn.textContent = showingTranscript ? 'Show Formatted' : 'Toggle Transcript';
+});
+</script>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

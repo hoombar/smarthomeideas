@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Smart doorbell AI announcements // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Smart doorbell AI announcements">
+  <meta name="twitter:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant I&#39;m thrilled to share a fantastic upgrade that will revolutionize your smart home doorbell experience. We&#39;re diving into LLM Vision, a brilliant integration that empowers your Home Assistant to &#34;see&#34; and describe who&#39;s at your door using advanced AI vision. Imagine hearing, &#34;A devilishly handsome, definitely not middle-aged man is at the door.&#34; You might initially think this sounds like a novelty, but trust me, once you start using it, you&#39;ll discover just how surprisingly useful this feature can be for your smart home setup. It can even handle scenarios like, &#34;Ding Dong, they have already gone,&#34; or &#34;Ding Dong, check the camera, their face is hidden.&#34; Let&#39;s get started! Getting Started: Google Cloud and Gemini API Setup First things first, we need to configure Gemini in Google Cloud. Don&#39;t worry if that sounds daunting; it&#39;s quite straightforward. You&#39;ll want to navigate to the Google Cloud Console and create a new project specifically for this purpose. Once your project is set up, the next crucial step is to enable the Gemini API. This API is the powerhouse behind your new AI vision capabilities. Next, you’ll need to obtain an API key from AI Studio. Simply head over to AIStudio.google.com/app/APIkey. I’ll make sure to include that link in the description below for easy access. Click “Create API Key” and ensure you select the Google Cloud project you just configured. Keep this API key readily available, as we’ll need it very soon.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/smart-doorbell-ai-announcements/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Smart doorbell AI announcements">
+  <meta property="og:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant I&#39;m thrilled to share a fantastic upgrade that will revolutionize your smart home doorbell experience. We&#39;re diving into LLM Vision, a brilliant integration that empowers your Home Assistant to &#34;see&#34; and describe who&#39;s at your door using advanced AI vision. Imagine hearing, &#34;A devilishly handsome, definitely not middle-aged man is at the door.&#34; You might initially think this sounds like a novelty, but trust me, once you start using it, you&#39;ll discover just how surprisingly useful this feature can be for your smart home setup. It can even handle scenarios like, &#34;Ding Dong, they have already gone,&#34; or &#34;Ding Dong, check the camera, their face is hidden.&#34; Let&#39;s get started! Getting Started: Google Cloud and Gemini API Setup First things first, we need to configure Gemini in Google Cloud. Don&#39;t worry if that sounds daunting; it&#39;s quite straightforward. You&#39;ll want to navigate to the Google Cloud Console and create a new project specifically for this purpose. Once your project is set up, the next crucial step is to enable the Gemini API. This API is the powerhouse behind your new AI vision capabilities. Next, you’ll need to obtain an API key from AI Studio. Simply head over to AIStudio.google.com/app/APIkey. I’ll make sure to include that link in the description below for easy access. Click “Create API Key” and ensure you select the Google Cloud project you just configured. Keep this API key readily available, as we’ll need it very soon.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-02T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Smart doorbell AI announcements</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jun 2, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          8 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Note: <em>This is generated from a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="elevate-your-smart-doorbell-ai-vision-announcements-with-home-assistant">Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant</h1>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00006.jpg" alt="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 6.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant at 6.0s" onclick="openImageModal('frame_00006.jpg', 'Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 6.0s')">
+<img src="frame_00017.jpg" alt="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 17.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant at 17.0s" onclick="openImageModal('frame_00017.jpg', 'Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 17.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00034.jpg" alt="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 34.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant at 34.0s" onclick="openImageModal('frame_00034.jpg', 'Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 34.0s')">
+<img src="frame_00037.jpg" alt="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 37.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant at 37.0s" onclick="openImageModal('frame_00037.jpg', 'Elevate Your Smart Doorbell: AI Vision Announcements with Home Assistant demonstration at 37.0s')">
+</div>
+I'm thrilled to share a fantastic upgrade that will revolutionize your smart home doorbell experience. We're diving into LLM Vision, a brilliant integration that empowers your Home Assistant to "see" and describe who's at your door using advanced AI vision. Imagine hearing, "A devilishly handsome, definitely not middle-aged man is at the door." You might initially think this sounds like a novelty, but trust me, once you start using it, you'll discover just how surprisingly useful this feature can be for your smart home setup. It can even handle scenarios like, "Ding Dong, they have already gone," or "Ding Dong, check the camera, their face is hidden." Let's get started!
+<h2 id="getting-started-google-cloud-and-gemini-api-setup">Getting Started: Google Cloud and Gemini API Setup</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00060.jpg" alt="Getting Started: Google Cloud and Gemini API Setup demonstration at 60.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Getting Started: Google Cloud and Gemini API Setup at 60.0s" onclick="openImageModal('frame_00060.jpg', 'Getting Started: Google Cloud and Gemini API Setup demonstration at 60.0s')">
+<img src="frame_00066.jpg" alt="Getting Started: Google Cloud and Gemini API Setup demonstration at 66.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Getting Started: Google Cloud and Gemini API Setup at 66.0s" onclick="openImageModal('frame_00066.jpg', 'Getting Started: Google Cloud and Gemini API Setup demonstration at 66.0s')">
+</div>
+<img src="frame_00074.jpg" alt="Getting Started: Google Cloud and Gemini API Setup demonstration at 74.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Getting Started: Google Cloud and Gemini API Setup at 74.0s" onclick="openImageModal('frame_00074.jpg', 'Getting Started: Google Cloud and Gemini API Setup demonstration at 74.0s')">
+First things first, we need to configure Gemini in Google Cloud. Don't worry if that sounds daunting; it's quite straightforward. You'll want to navigate to the Google Cloud Console and create a new project specifically for this purpose. Once your project is set up, the next crucial step is to enable the Gemini API. This API is the powerhouse behind your new AI vision capabilities.
+<p>Next, you&rsquo;ll need to obtain an API key from AI Studio. Simply head over to <a href="https://AIStudio.google.com/app/APIkey">AIStudio.google.com/app/APIkey</a>. I&rsquo;ll make sure to include that link in the description below for easy access. Click &ldquo;Create API Key&rdquo; and ensure you select the Google Cloud project you just configured. Keep this API key readily available, as we&rsquo;ll need it very soon.</p>
+<h2 id="installing-the-llm-vision-integration">Installing the LLM Vision Integration</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00092.jpg" alt="Installing the LLM Vision Integration demonstration at 92.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Installing the LLM Vision Integration at 92.0s" onclick="openImageModal('frame_00092.jpg', 'Installing the LLM Vision Integration demonstration at 92.0s')">
+<img src="frame_00100.jpg" alt="Installing the LLM Vision Integration demonstration at 100.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Installing the LLM Vision Integration at 100.0s" onclick="openImageModal('frame_00100.jpg', 'Installing the LLM Vision Integration demonstration at 100.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00122.jpg" alt="Installing the LLM Vision Integration demonstration at 122.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Installing the LLM Vision Integration at 122.0s" onclick="openImageModal('frame_00122.jpg', 'Installing the LLM Vision Integration demonstration at 122.0s')">
+<img src="frame_00132.jpg" alt="Installing the LLM Vision Integration demonstration at 132.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Installing the LLM Vision Integration at 132.0s" onclick="openImageModal('frame_00132.jpg', 'Installing the LLM Vision Integration demonstration at 132.0s')">
+</div>
+Now for the exciting part: installing the LLM Vision integration itself. You'll acquire this from HACS, the Home Assistant Community Store. I must commend the documentation available at [llmvision.gitbook.io](https://llmvision.gitbook.io) – it's truly excellent, so feel free to explore it for deeper insights. While there's a blueprint available, I opted not to use it because I wanted the system to process a single image rather than a video, which is significantly quicker. The entire process is quite snappy.
+<p>First, install it from HACS just like any other custom integration. After installation, give Home Assistant a quick restart. Then, you can install it as a standard integration directly through the Home Assistant interface. When prompted, paste the API key we obtained earlier and select &ldquo;Google&rdquo; as your provider. You&rsquo;ve got this!</p>
+<h2 id="addressing-privacy-concerns">Addressing Privacy Concerns</h2>
+<img src="frame_00153.jpg" alt="Addressing Privacy Concerns demonstration at 153.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Addressing Privacy Concerns at 153.0s" onclick="openImageModal('frame_00153.jpg', 'Addressing Privacy Concerns demonstration at 153.0s')">
+Before we proceed, let's address the elephant in the room: privacy. I know some of you might be thinking, "Hold on, this is sending images to the cloud. What about my family's privacy?" That's a completely valid concern. Since this is a remote LLM and not hosted locally, there's indeed a consideration about images being uploaded to Google's servers.
+<p>Here&rsquo;s how I&rsquo;ve approached it in my setup: my kids won&rsquo;t be ringing the doorbell, so it should never capture images of them. Crucially, my automation is configured to trigger only when someone <em>actually rings</em> the doorbell, not merely when there&rsquo;s motion in front of the camera. This significantly limits what gets sent to the cloud.</p>
+<h2 id="building-the-automation">Building the Automation</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00173.jpg" alt="Building the Automation demonstration at 173.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 173.0s" onclick="openImageModal('frame_00173.jpg', 'Building the Automation demonstration at 173.0s')">
+<img src="frame_00174.jpg" alt="Building the Automation demonstration at 174.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 174.0s" onclick="openImageModal('frame_00174.jpg', 'Building the Automation demonstration at 174.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00195.jpg" alt="Building the Automation demonstration at 195.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 195.0s" onclick="openImageModal('frame_00195.jpg', 'Building the Automation demonstration at 195.0s')">
+<img src="frame_00196.jpg" alt="Building the Automation demonstration at 196.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 196.0s" onclick="openImageModal('frame_00196.jpg', 'Building the Automation demonstration at 196.0s')">
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00208.jpg" alt="Building the Automation demonstration at 208.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 208.0s" onclick="openImageModal('frame_00208.jpg', 'Building the Automation demonstration at 208.0s')">
+<img src="frame_00209.jpg" alt="Building the Automation demonstration at 209.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Building the Automation at 209.0s" onclick="openImageModal('frame_00209.jpg', 'Building the Automation demonstration at 209.0s')">
+</div>
+<img src="frame_00229.jpg" alt="Building the Automation demonstration at 229.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Building the Automation at 229.0s" onclick="openImageModal('frame_00229.jpg', 'Building the Automation demonstration at 229.0s')">
+Alright, let's get into the fun part: integrating this into an automation. I already have a pretty neat automation that captures a picture from my video doorbell and sends a notification to my phone with the image every time someone presses the button. It also announces that the doorbell was rung throughout the house on various Google Home devices, which is super handy if you're upstairs and can't hear the physical doorbell. My goal is to enhance this existing automation so it can describe what it sees.
+<p>The magic happens when we introduce a new action called <code>llmvision.image_analyzer</code>, which is provided by the integration we just added. Let me walk you through the configuration that makes this work. We&rsquo;re utilizing the <code>llmvision.image_analyzer</code> action with some specific parameters that I&rsquo;ve found to be very effective.</p>
+<p>I&rsquo;ve set the <code>max_tokens</code> to 50 to ensure the responses remain concise. A &ldquo;token&rdquo; is essentially a word, so this limits the description to about 50 words. I&rsquo;ve also set the <code>temperature</code> to 0.2 for more consistent results. The temperature parameter ranges from 0 to 1; a value closer to 1 encourages more creative and varied responses, while a value closer to 0 yields more precise and consistent output. I&rsquo;ve fine-tuned mine to 0.2, though I did experiment with 1 to try and get more interesting results – your mileage may legitimately vary! For the model, I&rsquo;m using the Gemini 2.0 Flash model, primarily because it&rsquo;s quite capable and, importantly, it&rsquo;s free.</p>
+<h2 id="crafting-the-ai-prompt-prompt-engineering">Crafting the AI Prompt: Prompt Engineering</h2>
+<img src="frame_00257.jpg" alt="Crafting the AI Prompt: Prompt Engineering demonstration at 257.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Crafting the AI Prompt: Prompt Engineering at 257.0s" onclick="openImageModal('frame_00257.jpg', 'Crafting the AI Prompt: Prompt Engineering demonstration at 257.0s')">
+Here's where it gets truly fascinating: prompt engineering. This is where you instruct the AI exactly what to look for and how to respond. I've carefully crafted a prompt that handles various common scenarios quite well. This is the exact prompt I use that has given me excellent results:
+<pre tabindex="0"><code>This is a picture from a video doorbell.
+If there is nobody there say they have already gone and nothing else.
+Otherwise if they&#39;re walking away say they have already gone and nothing else.
+Otherwise if they&#39;re faces hidden say check the camera, they&#39;re faces hidden and nothing else.
+Otherwise if none of the above true then say a adjective, man/woman who looks like famous actor which I thought was quite fun.
+Holding whatever they&#39;re holding is at the door.
+</code></pre><p>The reason for being so explicit with the prompt, including phrases like &ldquo;and nothing else,&rdquo; is to prevent the AI from generating multiple, lengthy responses. I particularly love this approach because it effectively covers the most common situations you&rsquo;ll encounter. Sometimes people ring the bell and immediately walk away, perhaps dropping off a package or simply in a hurry. Other times, you might have someone whose face is obscured by a hood or mask, which is definitely valuable information to have before you open your front door.</p>
+<h2 id="the-results-and-customization">The Results and Customization</h2>
+<img src="frame_00352.jpg" alt="The Results and Customization demonstration at 352.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="The Results and Customization at 352.0s" onclick="openImageModal('frame_00352.jpg', 'The Results and Customization demonstration at 352.0s')">
+The results have been surprisingly accurate and, I must admit, quite entertaining! I tweaked the prompt a little after it consistently told me there was a "middle-aged man" at the door during my testing, and now it frequently tells me I look like Matt Damon. Brilliant! It has quickly become one of my favorite subtle enhancements in my smart home setup. Instead of a generic "doorbell pressed" announcement, you receive this wonderfully descriptive message that provides useful context about who's there. For example, "A man who wants you to subscribe is waving a sign around."
+<p>If you&rsquo;re considering implementing this yourself, I highly recommend starting with a basic setup and then fine-tuning the prompts to align with your specific needs. Perhaps you desire more detailed descriptions, or maybe you prefer to focus on particular elements like packages or uniforms. The possibilities for customization are vast!</p>
+<p>What do you think? Are you going to give this a try in your own smart home setup? Let me know in the comments below what creative prompts you come up with! If you found this helpful, as always, don&rsquo;t forget to give it a thumbs up and subscribe for more smart home content. Thanks for watching, and I&rsquo;ll see you in the next one!</p>
+<h1 id="links">Links:</h1>
+<p>I&rsquo;m using a Reolink PoE video doorbell, which I highly recommend: <a href="https://amzn.to/4knsj8D">https://amzn.to/4knsj8D</a></p>
+<p>Here&rsquo;s a link to Google AI studio: <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a>
+This is the llm vision integration documentation: <a href="https://llmvision.gitbook.io/getting-started">https://llmvision.gitbook.io/getting-started</a></p>
+<p>This is the prompt that I used to get good results:</p>
+<pre tabindex="0"><code>This is a picture from a video doorbell.
+
+If is nobody there say &#34;they have already gone&#34; and nothing else.
+Otherwise, If they are walking away say &#34;they have already gone&#34; and nothing else.
+Otherwise, If their face is hidden say &#34;Check the camera, their face is hidden.&#34; and nothing else.
+Otherwise, If none of the previous are true, say &#34;A {adjective} {man/woman} who looks like {famous actor} holding {what they are holding} is at the door&#34;
+</code></pre><p>And here&rsquo;s the complete YAML of the automation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">alias</span>: <span style="color:#ae81ff">Notifications - Doorbell</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">triggers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">type</span>: <span style="color:#ae81ff">turned_on</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">device_id</span>: <span style="color:#ae81ff">60f0f7dba756a82ed054ec8200829078</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">bd8e8bfd2b39fb7832bbc6cdd5df0fb3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">domain</span>: <span style="color:#ae81ff">binary_sensor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">device</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">conditions</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">actions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">delay</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">hours</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">minutes</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">seconds</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">milliseconds</span>: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">camera.snapshot</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>: {}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">filename</span>: <span style="color:#ae81ff">/config/www/reolink_snapshot/last_snapshot_doorbell.jpg</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">target</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">camera.reolink_video_doorbell_poe_fluent</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">llmvision.image_analyzer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">include_filename</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">max_tokens</span>: <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">provider</span>: <span style="color:#ae81ff">01JW3EN2J5JB2HVCN7DH6H8269</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image_file</span>: <span style="color:#ae81ff">/config/www/reolink_snapshot/last_snapshot_doorbell.jpg</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">model</span>: <span style="color:#ae81ff">gemini-2.0-flash</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">message</span>: <span style="color:#ae81ff">This is a picture from a video doorbell.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">If is nobody there say &#34;they have already gone&#34; and nothing else.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">Otherwise, If they are walking away say &#34;they have already gone&#34; and</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">nothing else.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">Otherwise, If their face is hidden say &#34;Check the camera, their face is</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">hidden.&#34; and nothing else.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">Otherwise, If none of the previous are true, say &#34;A {adjective}</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#ae81ff">man/woman} who looks like {famous actor} holding {what they are</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">holding} is at the door&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">response_variable</span>: <span style="color:#ae81ff">vision_result</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">notify.mobile_app_pixel_9_pro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>: {}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Doorbell</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">message</span>: <span style="color:#e6db74">&#34;{{ vision_result.response_text }}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">/local/reolink_snapshot/last_snapshot_doorbell.jpg</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">clickAction</span>: <span style="color:#ae81ff">app://com.mcu.reolink</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">alias</span>: <span style="color:#ae81ff">Notify Ben&#39;s phone</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">tts.speak</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">target</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">tts.home_assistant_cloud</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">cache</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">media_player_entity_id</span>: <span style="color:#ae81ff">media_player.kitchen</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">message</span>: <span style="color:#ae81ff">Ding dong. {{ vision_result.response_text }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">alias</span>: <span style="color:#ae81ff">Notify kitchen speaker</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mode</span>: <span style="color:#ae81ff">single</span>
+</span></span></code></pre></div><h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/rve_sSZI-Es?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+<!-- Image Modal for Click-to-Enlarge -->
+<div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); cursor: pointer;" onclick="closeImageModal()">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
+        <img id="modalImage" src="" alt="" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <div id="modalCaption" style="color: white; text-align: center; margin-top: 10px; font-size: 16px;"></div>
+    </div>
+    <span style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none;" onclick="closeImageModal()">&times;</span>
+</div>
+<script>
+function openImageModal(src, alt) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalCaption').textContent = alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+<!-- Transcript Toggle Functionality -->
+<div id="contentToggle" style="position: fixed; top: 20px; right: 20px; z-index: 999; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px;">
+    <button id="toggleBtn" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+        Toggle Transcript
+    </button>
+</div>
+<script>
+let showingTranscript = false;
+const toggleBtn = document.getElementById('toggleBtn');
+
+// Store transcript data for sections
+const transcriptData = [["Today I am super excited to show you something pretty neat that's going to take your smart home doorbell game to the next level. We are talking about LLM Vision, it's a brilliant integration and it lets your smart home assistant actually see and describe who's at your door using AI Vision. A devilishly handsome, definitely not middle aged man is at the door.", "Now I know you might be thinking isn't this just a bit of a gimmick but trust me once you start using it you'll actually see he just help surprisingly useful this can be for your smart home setup. Ding Dong, they have already gone. Ding Dong, check the camera, their face is hidden. So let's get into it.", "Okay first things first we need to get Gemini setup in Google Cloud and don't worry if that puts you off a bit it's pretty straightforward. We'll want to head over to Google Cloud Console and create a new project for this. Once you've got your project sorted you need to enable the Gemini API. This is what's going to power your AI vision capabilities.", "Next up need to grab an API key from AI Studio. Just head over to AIStudio.google.com slash app slash API key. I'll pop that link down in the description below so you can get it easily."], ["I'll pop that link down in the description below so you can get it easily. Hit create API key and make sure that you choose the Google Cloud project that is just being set up. Keep that API key handy because we're going to need it in just a moment.", "Now for the fun bit, installing the actual integration. You need to grab this from Hax which is the Home Assistant Community Store. I've got to say the documentation over on llmvision.getbook.io is absolutely brilliant so if you want to dive deeper you can head there as well. There's a blueprint there which you can use too. The reason I didn't use the blueprint is basically because I wanted an image that will be much much quicker to process than a video.", 'The process is pretty snappy itself so first install it from Hax like any other custom integration. Give Home Assistant a restart and then you can install it as a standard integration through the Home Assistant interface. Paste that API key that we grabbed earlier and choose Google as your provider.', "Now before we go any further let's talk about the elephant and room privacy. I know some of you might be thinking hang on this is sending images to the cloud. What about my family's privacy? That's a totally valid concern. The thing is because this is a remote llm and not hosted locally there's that consideration about images being uploaded to Google servers all the time."], ["Here's the thing in my setup. My kids aren't going to be ringing the doorbell so it should never capture images of them. The automation will only trigger when somebody actually rings the doorbell and not when there's motion in front of the camera. Right let's get into the fun bit actually using this in an automation. I've already got a pretty neat automation that takes a picture from the video doorbell and sends a notification to my phone with the image every time someone presses the button.", "It will also announce that the doorbell was run around the house on various Google homes which is quite handy if you're upstairs and you can't actually hear the doorbell. What I'm going to do is add to that existing automation so that it can then describe what it sees. The magic happens when we perform a new action called llm vision image analyzer which is provided by the integration that we added earlier.", "Let me show you the configuration that makes this work. We're using llmvision.image.analyzer action with some specific parameters that I found work really well. I've set the max tokens to 50 to keep the responses concise. A token is effectively a word so that's about 50 words and I've set the temperature to 0.2 for more consistent results. It goes from 0 to 1 and it will be more creative around the range of 1 and more precise around the range of 0."], ["It goes from 0 to 1 and it will be more creative around the range of 1 and more precise around the range of 0. I've tuned it to 0.2 and I played around with 1 as well to try and get more interesting results but you're my legitimate vary. I'm using the Gemini 2.0 flash model largely because it's pretty good and it's free.", "Here's where it gets really interesting, the prompt engineering. This is where retail AI is exactly what we want to look for and how to respond. I've crafted a prompt that handles different scenarios quite well. This is the prompt that I use that I got pretty good results from. This is a picture from a video doorbell. If there is nobody there say they have already gone and nothing else.", "Otherwise if they're walking away say they have already gone and nothing else. Otherwise if they're faces hidden say check the camera, they're faces hidden and nothing else. Otherwise if none of the above true then say a adjective, man slash woman who looks like famous actor which I thought was quite fun.", "Holding whatever they're holding is at the door. The reason for being very explicit with the prompt and saying things like and nothing else is so that you don't get multiple responses which end up just running on for a long time."], ["The reason for being very explicit with the prompt and saying things like and nothing else is so that you don't get multiple responses which end up just running on for a long time. I particularly love this approach because it handles the most common scenarios you'll encounter. Sometimes people ring the bell and they walk away immediately, maybe they're dropping off a package or they're in a hurry.", 'Other times you might get someone with their face obscured by your hood or mask which is definitely worth knowing about before you open the front door. The results have been surprisingly accurate and quite entertaining. I tweaked the prompt a little bit after it kept telling me there was middle age man at the door during my testing and now it keeps telling me I look like Matt Damon.', "Brilliant. It's become one of my favourite little touches in the smart home setup. Instead of getting a generic doorbell pressed announcement you get this lovely descriptive message. Let tells you something useful about who's there.", "A man who wants you to subscribe is waving a sign around. If you're thinking about implementing this for yourself then I definitely recommend starting with a basic setup and then tweaking the prompts to match your specific needs. Maybe you want more detailed descriptions or perhaps you prefer to focus on specific things like packages or uniforms.", "What do you think? Are you going to give this a try in your own smart home setup? Let me know in the comments down below what creative prompts you come up with and if you found this helpful, as ever, don't forget to give it a thumbs up and subscribe for more smart home content. Thanks for watching and I'll see you in the next one."]];
+
+// Store original content for each section
+const originalSectionContent = {};
+
+// Initialize: find all sections and store their original content
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    sections.forEach((header, index) => {
+        // Find all content between this header and the next header
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                sectionContent.push(nextElement);
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        // Store original content for each paragraph in this section
+        const sectionId = header.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        originalSectionContent[sectionId] = [];
+        
+        sectionContent.forEach(element => {
+            originalSectionContent[sectionId].push({
+                element: element,
+                originalHTML: element.innerHTML
+            });
+        });
+    });
+});
+
+toggleBtn.addEventListener('click', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    
+    sections.forEach((header, sectionIndex) => {
+        const sectionTitle = header.textContent.trim();
+        const sectionId = sectionTitle.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        
+        // Find paragraphs in this section
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                // Skip image containers
+                if (!nextElement.querySelector('img') && nextElement.innerText.trim().length > 20) {
+                    sectionContent.push(nextElement);
+                }
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        if (showingTranscript) {
+            // Switch back to formatted content
+            if (originalSectionContent[sectionId]) {
+                originalSectionContent[sectionId].forEach(item => {
+                    item.element.innerHTML = item.originalHTML;
+                });
+            }
+        } else {
+            // Switch to transcript content
+            const transcriptForSection = transcriptData[sectionIndex] || [];
+            
+            sectionContent.forEach((element, paragraphIndex) => {
+                if (transcriptForSection[paragraphIndex]) {
+                    element.innerHTML = transcriptForSection[paragraphIndex];
+                }
+            });
+        }
+    });
+    
+    showingTranscript = !showingTranscript;
+    toggleBtn.textContent = showingTranscript ? 'Show Formatted' : 'Toggle Transcript';
+});
+</script>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

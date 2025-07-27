@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Resume Spotify music after an announcement // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resume Spotify music after an announcement">
+  <meta name="twitter:description" content="This is a transcript from one of my YouTube videos
+Video You can watch the full video on YouTube here: Transcript My wife listens to music using around the house on Google Home’s, and very helpfully told me how annoying it was that any announcements stopped the music playback. We have a few different announcements that happen throughout the house and getting the music to resume afterwards was a little more tricky than I was expecting it to be.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/spotify-music-playback-resume-after-announcement/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Resume Spotify music after an announcement">
+  <meta property="og:description" content="This is a transcript from one of my YouTube videos
+Video You can watch the full video on YouTube here: Transcript My wife listens to music using around the house on Google Home’s, and very helpfully told me how annoying it was that any announcements stopped the music playback. We have a few different announcements that happen throughout the house and getting the music to resume afterwards was a little more tricky than I was expecting it to be.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-25T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Resume Spotify music after an announcement</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jan 25, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          4 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><em>This is a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OIIvjIJT8Vk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="transcript">Transcript</h1>
+<p>My wife listens to music using around the house on Google Home&rsquo;s, and very helpfully told me how annoying it was that any announcements stopped the music playback.
+We have a few different announcements that happen throughout the house  and getting the music to resume afterwards was a little more tricky than I was expecting it to be.</p>
+<p>It basically involves 4 different parts:</p>
+<ul>
+<li>The official Spotify integration</li>
+<li>HACS, which is the Home Assistant Community Store</li>
+<li>The Spotcast integration from HACS ^c84645</li>
+<li>A yaml script, written by a fairly active community member that goes by TheFes</li>
+</ul>
+<p>The Spotify integration is fairly straight forward to get set up for a single account.</p>
+<ul>
+<li>Go to the Spotify developer dashboard</li>
+<li>tap <code>create app</code></li>
+<li>set the redirect to your home assistant instance</li>
+<li>agree to the terms</li>
+<li>and finally tap save</li>
+</ul>
+<p>If you have multiple accounts, it&rsquo;s a little more complicated, and the instructions aren&rsquo;t actually very clear.
+If you load up an incognito window, and log in to Spotify, then go in to Home Assistant, go to the Spotify integration and tap on add service again, then it will add the other use account that you are logged in to Spotify with.</p>
+<p>Once you have the Spotify integration set up, you&rsquo;ll need to set up Spotcast. This is a little bit more involved, but shouldn&rsquo;t take longer than a few minutes.</p>
+<p>There&rsquo;s two cookies that you need to scoop up from a logged in Spotify session. They are <code>sp_key</code>, and <code>sp_dc</code>. The key is your identifier for your logged in session, and you should make sure you keep this secret. I believe the <code>dc</code> cookie tells it which data centre to use, but you should also make sure you keep this secret.</p>
+<p>Multiple accounts here doesn&rsquo;t have any gotcha&rsquo;s, so you can just grab the cookies for each user, add them to your secrets and then link them to your Home Assistant configuration.</p>
+<p>It&rsquo;s worth giving Spotcast a quick check once you&rsquo;ve got it set up, and check that it works for each user.
+You can do this by heading over to developer tools, and creating a &ldquo;start spotcast&rdquo; action for each of the users that you have set up.</p>
+<p>Now you have the ability to control Spotify from Home Assistant, and specifically you can control Spotify on any cast devices on your network, too!</p>
+<p>You&rsquo;re now in a good position to set up the script so it can resume after an announcement. What the script is basically doing is taking a snapshot of the user playing a Spotify item, playing the announcement, then setting the state of the user playing the item back on to the cast device.</p>
+<p>You need to have packages enabled in Home assistant, if you haven&rsquo;t done this yet, you can just add these lines in to your home assistant <code>configuration.yaml</code>
+Grab the script from the repo, and dump it in your packages folder, or create a new file, and copy the contents over.
+It might look big and scary at first, but it&rsquo;s just the first 40 lines or so that are configurable, and it&rsquo;s actually pretty straight forwards.
+This is how I configured mine.
+I set my primary spotcast user.
+I created some speaker groups that match what I have in Google Home. They are using the entity names from the Cast integration in Home Assistant.
+I enabled the automation.
+In the docs, it says the automation can be flaky, but from my experience, it works pretty much every time.
+I commented out the volume change, because I set the volumes on a nightly automation for the different rooms.</p>
+<p>And now, when you send announcements, your music will keep playing after!</p>
+<p>Which means your automation will be.</p>
+<p>If you made it this far in the video, thank you for watching, and I wish you well on your home automation journey!</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
