@@ -187,12 +187,124 @@ In case you're in a particularly generous mood, you can fund my next cup of coff
 The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.
 
 <!-- Image Modal for Click-to-Enlarge -->
-<div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); cursor: pointer;" onclick="closeImageModal()">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
-        <img id="modalImage" src="" alt="" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-        <div id="modalCaption" style="color: white; text-align: center; margin-top: 10px; font-size: 16px;"></div>
+<style>
+/* Modal responsive styles for better mobile experience */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+#imageModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 98%;
+    max-height: 95%;
+    padding: 0;
+    margin: 0;
+}
+
+#imageModal #modalImage,
+#imageModal .modal-content #modalImage,
+.post-content #imageModal #modalImage {
+    width: auto;
+    height: auto;
+    max-height: 92vh;
+    max-width: 95vw;
+    min-width: 80vw;
+    min-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: block;
+}
+
+#modalCaption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    #imageModal .modal-content {
+        max-width: 99%;
+        max-height: 98%;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 95vh;
+        max-width: 98vw;
+        min-width: 90vw;
+        border-radius: 4px;
+    }
+    
+    #modalCaption {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
+
+/* Ultra-small screens (phones in portrait) */
+@media (max-width: 480px) {
+    #imageModal .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 98vh;
+        max-width: 100vw;
+        min-width: 95vw;
+        border-radius: 2px;
+    }
+    
+    .modal-close {
+        top: 5px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+</style>
+
+<div id="imageModal" onclick="closeImageModal()">
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
     </div>
-    <span style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; user-select: none;" onclick="closeImageModal()">&times;</span>
+    <span class="modal-close" onclick="closeImageModal()">&times;</span>
 </div>
 
 <script>
