@@ -112,12 +112,28 @@ Look, building a reliable ZigBee network isn't rocket science, but it does requi
 If this post helped you out, don't forget to hit that like button and subscribe for more smart home content. Check out the description for links I mentioned, and leave a comment down below: what's your biggest ZigBee challenge? Did I cover everything, or do you think I missed anything? Let me know! I read every comment and often turn them into future videos, so don't be shy. Until next time, happy automating, and I'll catch you in the next one!
 
 # Links:
-- 
+Here are the links mentioned in the video:
+- WiFi analyser - https://play.google.com/store/apps/details?id=abdelrahman.wifianalyzerpro&hl=en_GB
+- SMLight slzb06m - https://s.click.aliexpress.com/e/_om72EQS
+- Home Assistant video showing USB 3 interference - https://www.youtube.com/watch?v=tHqZhNcFEvA
+
+Here are some of the zigbee devices I'm using in my network:
+- Innr smart plugs - https://amzn.to/44EqjDC
+- Sonoff USB coordinator - https://amzn.to/4lyLA7x
+- Candeo dimmer switches - https://amzn.to/4lCR957
+- LEDVance smart plug - https://amzn.to/44U9zH7
+- Aqara vibration sensors - https://s.click.aliexpress.com/e/_omTArqA
+- Tuya motion sensors - https://s.click.aliexpress.com/e/_o2EC0dY
+- Tuya buttons - https://s.click.aliexpress.com/e/_olnvxnY
+- Tuya contact sensors - https://s.click.aliexpress.com/e/_oDzeGXy
+- Aqara motion sensors - https://s.click.aliexpress.com/e/_onEYiiw
+- Aqara buttons - https://s.click.aliexpress.com/e/_ooUGcXy
+- Aqara door sensors - https://s.click.aliexpress.com/e/_oB3h0gI
 
 # Video
 
 You can watch the full video on YouTube here:
-{{< youtube uuid-link >}}
+{{< youtube hksjJxe2hcY >}}
 
 # Support me to keep making videos
 
