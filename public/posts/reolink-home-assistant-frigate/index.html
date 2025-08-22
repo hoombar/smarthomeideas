@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Reolink &#43; Home Assistant &#43; Frigate // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reolink &#43; Home Assistant &#43; Frigate">
+  <meta name="twitter:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Reolink Duo 3 PoE: A 180-Degree Vision for Your Smart Home Security Hey there, smart home enthusiasts! Today, I’m diving deep into the Reolink Duo 3 PoE, a fascinating camera that’s essentially two cameras in one promising a massive 180 degrees of coverage. I’m going to show you the dual-camera stitching magic, whether that join line is actually noticeable, and how it integrates seamlessly with Home Assistant and Frigate. We’ll also explore why substreams might matter a little more than you think. I’ll compare it head-to-head with my trusty RLC-520A, dive into the Reolink apps to show you how to configure everything properly, and explore how those standard RTSP streams make this camera work with pretty much anything. I’ll be diving into all the details, so if that sounds like fun, then stick around.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/reolink-home-assistant-frigate/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Reolink &#43; Home Assistant &#43; Frigate">
+  <meta property="og:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Reolink Duo 3 PoE: A 180-Degree Vision for Your Smart Home Security Hey there, smart home enthusiasts! Today, I’m diving deep into the Reolink Duo 3 PoE, a fascinating camera that’s essentially two cameras in one promising a massive 180 degrees of coverage. I’m going to show you the dual-camera stitching magic, whether that join line is actually noticeable, and how it integrates seamlessly with Home Assistant and Frigate. We’ll also explore why substreams might matter a little more than you think. I’ll compare it head-to-head with my trusty RLC-520A, dive into the Reolink apps to show you how to configure everything properly, and explore how those standard RTSP streams make this camera work with pretty much anything. I’ll be diving into all the details, so if that sounds like fun, then stick around.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-22T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Reolink &#43; Home Assistant &#43; Frigate</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Aug 22, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          12 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Note: <em>This is generated from a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="reolink-duo-3-poe-a-180-degree-vision-for-your-smart-home-security">Reolink Duo 3 PoE: A 180-Degree Vision for Your Smart Home Security</h1>
+<p>Hey there, smart home enthusiasts! Today, I&rsquo;m diving deep into the Reolink Duo 3 PoE, a fascinating camera that&rsquo;s essentially two cameras in one promising a massive 180 degrees of coverage. I&rsquo;m going to show you the dual-camera stitching magic, whether that join line is actually noticeable, and how it integrates seamlessly with Home Assistant and Frigate. We&rsquo;ll also explore why substreams might matter a little more than you think. I&rsquo;ll compare it head-to-head with my trusty RLC-520A, dive into the Reolink apps to show you how to configure everything properly, and explore how those standard RTSP streams make this camera work with pretty much anything. I&rsquo;ll be diving into all the details, so if that sounds like fun, then stick around.</p>
+<h2 id="my-existing-reolink-setup">My Existing Reolink Setup</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00052.jpg" alt="My Existing Reolink Setup demonstration at 52.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="My Existing Reolink Setup at 52.0s" onclick="openImageModal('frame_00052.jpg', 'My Existing Reolink Setup demonstration at 52.0s')">
+<img src="frame_00053.jpg" alt="My Existing Reolink Setup demonstration at 53.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="My Existing Reolink Setup at 53.0s" onclick="openImageModal('frame_00053.jpg', 'My Existing Reolink Setup demonstration at 53.0s')">
+</div>
+I've got three Reolink cameras keeping watch around the house. There's the PoE video doorbell by the front door, an RLC-520A covering the front garden, and another RLC-520A watching the back garden. All of them are PoE-powered, which means they get both power and data through a single Ethernet cable. You won't have to mess with separate power supplies or worry about wireless connectivity dropping out. These cameras have been absolutely rock solid for months now, with no dropouts, no connection issues—just reliable monitoring, day and night.
+<p>The RLC-520As are great cameras, don&rsquo;t get me wrong, but they&rsquo;ve got a fairly standard field of view that leaves some blind spots in the front garden area. That&rsquo;s where the Reolink Duo 3 PoE comes in. Reolink sent me this camera in exchange for an honest review, and it&rsquo;s essentially an upgrade for my existing RLC-520A, but with one major difference: it offers a massive 180-degree field of view.</p>
+<h2 id="introducing-the-reolink-duo-3-poe-a-wider-perspective">Introducing the Reolink Duo 3 PoE: A Wider Perspective</h2>
+<img src="frame_00105.jpg" alt="Introducing the Reolink Duo 3 PoE: A Wider Perspective demonstration at 105.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Introducing the Reolink Duo 3 PoE: A Wider Perspective at 105.0s" onclick="openImageModal('frame_00105.jpg', 'Introducing the Reolink Duo 3 PoE: A Wider Perspective demonstration at 105.0s')">
+<img src="frame_00139.jpg" alt="Introducing the Reolink Duo 3 PoE: A Wider Perspective demonstration at 139.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Introducing the Reolink Duo 3 PoE: A Wider Perspective at 139.0s" onclick="openImageModal('frame_00139.jpg', 'Introducing the Reolink Duo 3 PoE: A Wider Perspective demonstration at 139.0s')">
+The way the Duo 3 PoE achieves that wide view is actually quite clever. Rather than using a single ultra-wide lens, which could create massive fisheye distortion and make everything look warped, the Duo 3 PoE is using two separate cameras side-by-side. Each camera captures its own 90-degree section, and then the camera's internal processing effectively stitches those two feeds together in real-time to create a seamless ultra-wide stream.
+<p>What&rsquo;s particularly neat is that you can actually adjust the angle of each camera when you first set it up. This lets you fine-tune exactly what you want to capture and helps minimize that join line where the two feeds meet. I was genuinely curious to see how obvious this seam would be in practice. After all, if it&rsquo;s distracting or creates weird visual artifacts, then the whole concept falls apart.</p>
+<h2 id="the-power-of-substreams-for-frigate">The Power of Substreams for Frigate</h2>
+<img src="frame_00151.jpg" alt="The Power of Substreams for Frigate demonstration at 151.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="The Power of Substreams for Frigate at 151.0s" onclick="openImageModal('frame_00151.jpg', 'The Power of Substreams for Frigate demonstration at 151.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00170.jpg" alt="The Power of Substreams for Frigate demonstration at 170.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="The Power of Substreams for Frigate at 170.0s" onclick="openImageModal('frame_00170.jpg', 'The Power of Substreams for Frigate demonstration at 170.0s')">
+<img src="frame_00181.jpg" alt="The Power of Substreams for Frigate demonstration at 181.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="The Power of Substreams for Frigate at 181.0s" onclick="openImageModal('frame_00181.jpg', 'The Power of Substreams for Frigate demonstration at 181.0s')">
+</div>
+One feature that's absolutely crucial for my setup is substream support, and I'm happy to say that the Duo 3 PoE handles this brilliantly. All of my Reolink cameras support this feature, and it's honestly one of the reasons that I stick with the brand. For those running Frigate or similar video analysis software, substreams are a complete game-changer.
+<p>The camera simultaneously captures two output streams: you get a high-resolution mainstream (and in the Duo 3 PoE&rsquo;s case, that&rsquo;s a whopping 7680x2160) and a lower-resolution substream that is 1536x432, which maintains the same aspect ratio. Frigate uses that lower- quality stream for motion detection and object recognition, which stops your hardware from getting absolutely hammered. This is particularly important with the Duo 3 PoE because that 180-degree view creates an unusual ultra-wide aspect ratio stream with quite a high resolution. Without substreams, you&rsquo;d be asking your CPU or hardware accelerators to process every single pixel of that 7680x2160 image for detection.</p>
+<p>Meanwhile, you still get to record the full-quality mainstream to disk when you actually need to see the details, like identifying someone&rsquo;s face or reading a license plate. It&rsquo;s kind of the best of both worlds. All of my Reolink cameras are PoE-powered, so there&rsquo;s no worry about battery life, wireless connectivity dropping out, or cameras going offline just when you need them the most. That constant, reliable stream is essential for proper security monitoring.</p>
+<h2 id="installation-and-initial-impressions">Installation and Initial Impressions</h2>
+<img src="frame_00259.jpg" alt="Installation and Initial Impressions demonstration at 259.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Installation and Initial Impressions at 259.0s" onclick="openImageModal('frame_00259.jpg', 'Installation and Initial Impressions demonstration at 259.0s')">
+<img src="frame_00275.jpg" alt="Installation and Initial Impressions demonstration at 275.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Installation and Initial Impressions at 275.0s" onclick="openImageModal('frame_00275.jpg', 'Installation and Initial Impressions demonstration at 275.0s')">
+Okay, time to swap out the old RLC-520A and see what this dual-camera setup can actually do. The mounting process was pretty straightforward: same screw pattern, same PoE connection. Within a few minutes, I had the camera up and connected to the network.
+<p>The difference in coverage is immediately obvious and, frankly, quite dramatic. With the old RLC- 520A, I could see a decent chunk of the front garden, but there were definite blind spots along the edges. Someone approaching from the far left or the far right could potentially avoid detection until they were quite close to the house. With the Duo 3 PoE, I can pretty much see the entire front garden area, right from the fence line on one side to the driveway on the other side. It&rsquo;s like having two cameras covering overlapping zones but getting it all in one continuous stream.</p>
+<h2 id="the-dual-camera-stitching">The Dual Camera Stitching</h2>
+<img src="frame_00299.jpg" alt="The Dual Camera Stitching demonstration at 299.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="The Dual Camera Stitching at 299.0s" onclick="openImageModal('frame_00299.jpg', 'The Dual Camera Stitching demonstration at 299.0s')">
+The join line between the two camera feeds is there if you're looking for it. I spent a fair bit of time in the settings trying to get it as seamless as possible. The camera software lets you adjust things like the overlap between the two images and the blending algorithm used to merge them. It's probably good enough for security monitoring. In practice, you barely notice it, and the benefits from the ultra-wide coverage far outweigh the minor visual compromise.
+<p>I haven&rsquo;t yet mapped out the new detection zones in Frigate to account for the new field of view, but that&rsquo;s just going to be a matter of drawing a few polygons.</p>
+<h2 id="seamless-home-assistant-integration">Seamless Home Assistant Integration</h2>
+<img src="frame_00324.jpg" alt="Seamless Home Assistant Integration demonstration at 324.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Seamless Home Assistant Integration at 324.0s" onclick="openImageModal('frame_00324.jpg', 'Seamless Home Assistant Integration demonstration at 324.0s')">
+<img src="frame_00358.jpg" alt="Seamless Home Assistant Integration demonstration at 358.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Seamless Home Assistant Integration at 358.0s" onclick="openImageModal('frame_00358.jpg', 'Seamless Home Assistant Integration demonstration at 358.0s')">
+<img src="frame_00380.jpg" alt="Seamless Home Assistant Integration demonstration at 380.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Seamless Home Assistant Integration at 380.0s" onclick="openImageModal('frame_00380.jpg', 'Seamless Home Assistant Integration demonstration at 380.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00420.jpg" alt="Seamless Home Assistant Integration demonstration at 420.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Seamless Home Assistant Integration at 420.0s" onclick="openImageModal('frame_00420.jpg', 'Seamless Home Assistant Integration demonstration at 420.0s')">
+<img src="frame_00423.jpg" alt="Seamless Home Assistant Integration demonstration at 423.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Seamless Home Assistant Integration at 423.0s" onclick="openImageModal('frame_00423.jpg', 'Seamless Home Assistant Integration demonstration at 423.0s')">
+</div>
+Adding this into Home Assistant was brilliantly simple, and this is where Reolink really shines. Their integration is "platinum tier," which means it's officially supported and maintained by the Home Assistant core team. You get proper ongoing support, regular updates, and everything just works as expected.
+<p>The setup process is wonderfully straight- forward as well. You just go into Settings, Devices &amp; Services, click &ldquo;Add Integration,&rdquo; search for Reolink, enter the camera&rsquo;s IP address, enter your credentials, and within a few seconds, Home Assistant discovers all the camera&rsquo;s capabilities and adds the appropriate entities.</p>
+<p>With the Duo 3 PoE, you get a comprehensive set of controls and sensors. There are switches for the built-in floodlight and siren, binary sensors for person and animal detections, as well as motion detection, and camera entities for both the mainstream and substream. You even get controls for more granular settings like motion sensitivity, floodlight behavior when motion is detected, siren volume levels, and whether the infrared illuminators activate automatically at night.</p>
+<p>Comparing this to my existing RLC-520A, the entity lists are almost identical, which makes sense since they&rsquo;re both modern Reolink cameras with similar feature sets. The main difference is just the resolution and aspect ratio of the camera&rsquo;s streams themselves.</p>
+<p>I&rsquo;ve got a Frigate card set up in my main dashboard that shows live feeds from all the cameras. Swapping to the new camera was literally just a case of editing the card configuration and changing the device reference from the old camera to the new one. Two minutes of work, and I was back up and running. The only thing you might notice is as you flick between them, one of the cards suddenly shrinks, and then when you go back to a more standard aspect ratio, it suddenly jumps up again.</p>
+<h2 id="frigate-configuration-for-the-duo-3-poe">Frigate Configuration for the Duo 3 PoE</h2>
+<img src="frame_00473.jpg" alt="Frigate Configuration for the Duo 3 PoE demonstration at 473.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Frigate Configuration for the Duo 3 PoE at 473.0s" onclick="openImageModal('frame_00473.jpg', 'Frigate Configuration for the Duo 3 PoE demonstration at 473.0s')">
+<img src="frame_00497.jpg" alt="Frigate Configuration for the Duo 3 PoE demonstration at 497.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Frigate Configuration for the Duo 3 PoE at 497.0s" onclick="openImageModal('frame_00497.jpg', 'Frigate Configuration for the Duo 3 PoE demonstration at 497.0s')">
+Getting the new camera to work with Frigate was remarkably straightforward. Honestly, it quite surprised me, given the unusual 32x9 aspect ratio. I basically just copied the configuration from my existing RLC-520A, updated the camera name and IP address, and changed the resolution settings to match the Duo 3 PoE specifications. The mainstream runs at 7680x2160, as I mentioned earlier, that's where you get the ultra-wide look, and the substream will use 1536x432. Everything else in the config stayed the same.
+<p>Frigate picked up the new camera immediately, started processing the feed, and began to detect objects without any hiccups. The object detection and accuracy seem to be just as good as my other cameras, which is impressive considering the different aspect ratio and the fact that it is essentially processing a stitched image. The wider field of view means fewer missed events at the edges of the frame, which was exactly what I was hoping for. Previously, someone could potentially walk along the fence line or the hedge line in my case and only get detected for a few seconds when they crossed into the camera&rsquo;s view. Now, I&rsquo;m getting much earlier detection as they come into the garden from the back, which gives me better advanced warning and longer clips to review as well.</p>
+<h2 id="deep-dive-into-reolink-apps-desktop--mobile">Deep Dive into Reolink Apps (Desktop &amp; Mobile)</h2>
+<img src="frame_00568.jpg" alt="Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 568.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Deep Dive into Reolink Apps (Desktop & Mobile) at 568.0s" onclick="openImageModal('frame_00568.jpg', 'Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 568.0s')">
+<img src="frame_00591.jpg" alt="Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 591.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Deep Dive into Reolink Apps (Desktop & Mobile) at 591.0s" onclick="openImageModal('frame_00591.jpg', 'Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 591.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00600.jpg" alt="Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 600.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Reolink Apps (Desktop & Mobile) at 600.0s" onclick="openImageModal('frame_00600.jpg', 'Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 600.0s')">
+<img src="frame_00607.jpg" alt="Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 607.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Deep Dive into Reolink Apps (Desktop & Mobile) at 607.0s" onclick="openImageModal('frame_00607.jpg', 'Deep Dive into Reolink Apps (Desktop & Mobile) demonstration at 607.0s')">
+</div>
+Reolink provides both desktop and mobile apps for configuration, and I tested both the Mac app and the Android app fairly thoroughly. This is where you'll want to spend some proper time if you're setting up a Duo 3 PoE. You can set up a lot more stuff in the apps than you can through the Home Assistant integration. To connect to it, you just enter your camera's credentials, including your username and password. As long as you're on the same network, it should be auto-discovered.
+<p>The settings between both apps are refreshingly consistent. What you can do on your phone, you can also do on your computer. This isn&rsquo;t always the case with security camera manufacturers, so kudos to Reolink for maintaining feature parity. You can configure way more through these apps than you can in the Home Assistant integration, as I said. For instance, you can completely remove the watermark from the stream image, adjust the timestamp format and position, fine-tune the motion detection sensitivity zones, and, importantly for the Duo 3 PoE, really dial in that dual-camera stitching together of the two streams.</p>
+<p>The stitching settings are particularly worth exploring. You can adjust the overlap between the two camera images, change the blending algorithm, and even manually tweak the alignment if things look slightly off. When I first set up the camera, there was a notable misalignment that made the join lines quite obvious. After spending a few minutes in the app adjusting these settings, I got to a point where you really have to look for the seam to notice it.</p>
+<p>One extra thing that I&rsquo;ve noticed is in the night mode, if you turn on the floodlight, the glare you seem to get from the vandal-proof casing seems to reflect right back at the cameras, and it makes the image almost unusable. The infrared light is not quite as bad. You still get a little bit of glare, but if you look, you can definitely see the seam line much more easily because of the way the light is bouncing around inside that dome. This is something I hadn&rsquo;t really anticipated, but it&rsquo;s obviously a little bit of a problem. If you&rsquo;re relying on this solely to have it as a floodlight to light the way so you can see people in color, then that might be a bit of a problem for you because you&rsquo;d have to have some alternative means to light the driveway. If you&rsquo;re setting up a Duo 3 PoE, definitely spend some time in the app getting everything tuned properly rather than accepting the defaults. It makes quite a big difference to the final image quality.</p>
+<h2 id="rtsp-stream-versatility">RTSP Stream Versatility</h2>
+<img src="frame_00657.jpg" alt="RTSP Stream Versatility demonstration at 657.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="RTSP Stream Versatility at 657.0s" onclick="openImageModal('frame_00657.jpg', 'RTSP Stream Versatility demonstration at 657.0s')">
+Since these cameras output standard RTSP streams, you can view them pretty much anywhere that supports video streaming. This is one of the big advantages of going with an established brand like Reolink rather than some more proprietary systems out there. I can pull up the front door feed, for example, on my TV using VLC or some other software if I want to see who's at the door from inside the living room. I can view the streams on my phone using an RTSP-compatible app. I can even embed them into custom dashboards or third-party monitoring systems. The RTSP URLs follow a predictable format, so once you've got one camera working, setting up additional cameras is just a matter of changing the IP address in the URL. No wrestling with different streaming protocols or vendor-specific APIs.
+<h2 id="final-thoughts--recommendation">Final Thoughts &amp; Recommendation</h2>
+<p>So, the Duo 3 PoE is a solid upgrade if you need wider coverage than a traditional security camera can provide. The dual-camera approach works well in practice, the integration with Home Assistant is seamless, and it plays nicely with Frigate and other video analysis systems. Is the stitching perfect? No, there&rsquo;s still a subtle join line if you&rsquo;re looking for it. Is the wider field of view worth the minor compromise? I think so, yes, for my setup, definitely. The 180-degree coverage means I can now monitor the entire front garden with a single camera and eliminate all of those blind spots that would bother me a little bit, and get much earlier detection if anyone approaches the house from the side.</p>
+<p>At roughly twice the price of the RLC-520A, it&rsquo;s not cheap, but if you need that ultra-wide coverage, then there aren&rsquo;t that many alternatives out there that work this well. And think about it: you&rsquo;re effectively getting two cameras anyway.</p>
+<h2 id="what-do-you-think">What Do You Think?</h2>
+<p>So, what do you think? Are you running Reolink cameras in your setup, or are you using something else entirely? Let me know in the comments what your experience has been like with security camera integration. I&rsquo;m always interested to hear about different approaches to the same problem. Don&rsquo;t forget to hit like if this was useful and subscribe for more smart home projects where I dive into the nitty-gritty of making everything work together properly. I&rsquo;ll catch you next time, and happy automating!</p>
+<h1 id="links">Links:</h1>
+<ul>
+<li>Reolink Doorbell PoE link: <a href="https://amzn.to/4mP9RX7">https://amzn.to/4mP9RX7</a></li>
+<li>Reolink RLC-520A link: <a href="https://amzn.to/3Jqnu0G">https://amzn.to/3Jqnu0G</a></li>
+<li>Reolink 3V POE link: <a href="https://amzn.to/4fOhBGO">https://amzn.to/4fOhBGO</a></li>
+<li>You can get 5% off with &ldquo;ben5&rdquo; if you order a Duo 3V from the official site: <a href="https://reolink.com/product/reolink-duo-3v-poe/?aff=1149">https://reolink.com/product/reolink-duo-3v-poe/?aff=1149</a></li>
+</ul>
+<p>The Reolink 3V PoE was kindly sent to me from Reolink in exchange for a review.</p>
+<p>This things is absolutely rock solid, and can take a whack or two (I dropped it on the floor, and I think it did more damage to my floor!). I&rsquo;m pretty happy with the upgrade, so now have to find a new use for my old Reolink RLC-520A!</p>
+<p>#reolink, #ReolinkSecurity, #ReolinkVandalProof</p>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/IUcAfBqf_oU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+<!-- Image Modal for Click-to-Enlarge -->
+<style>
+/* Modal responsive styles for better mobile experience */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+#imageModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 98%;
+    max-height: 95%;
+    padding: 0;
+    margin: 0;
+}
+
+#imageModal #modalImage,
+#imageModal .modal-content #modalImage,
+.post-content #imageModal #modalImage {
+    width: auto;
+    height: auto;
+    max-height: 92vh;
+    max-width: 95vw;
+    min-width: 80vw;
+    min-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: block;
+}
+
+#modalCaption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    #imageModal .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 5px;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 95vh;
+        max-width: 98vw;
+        min-width: 90vw;
+        min-height: 70vh;
+        border-radius: 4px;
+    }
+    
+    #modalCaption {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
+
+/* Ultra-small screens (phones in portrait) */
+@media (max-width: 480px) {
+    #imageModal .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 2px;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 98vh;
+        max-width: 99vw;
+        min-width: 95vw;
+        min-height: 80vh;
+        border-radius: 2px;
+    }
+    
+    .modal-close {
+        top: 5px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+</style>
+<div id="imageModal" onclick="closeImageModal()">
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
+    </div>
+    <span class="modal-close" onclick="closeImageModal()">&times;</span>
+</div>
+<script>
+function openImageModal(src, alt) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalCaption').textContent = alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+<!-- Transcript Toggle Functionality -->
+<div id="contentToggle" style="position: fixed; top: 20px; right: 20px; z-index: 999; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px;">
+    <button id="toggleBtn" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+        Toggle Transcript
+    </button>
+</div>
+<script>
+let showingTranscript = false;
+const toggleBtn = document.getElementById('toggleBtn');
+
+// Store transcript data for sections
+const transcriptData = [["This is the rear-links duo 3B. It's basically two cameras masquerading as one promising a massive 180 degrees of coverage. I'm going to show you the dual camera stitching magic, whether that join line actually is noticeable, how it", "integrates with home assistant and trigger and why sub streams might matter a little more than you think. We'll compare it head-to-head with my trusty RLC528 dive into the apps, let actually let you configure everything properly and", "explore how those standard RTSP streams make this camera work with pretty much anything. I'll be diving into the details so if that sounds like fun then stick around. I've got three rear-links cameras keeping watch around the house. There's the", "PRE video doorbell by the front door in RLC528 covering the front garden and another RLC520A you're watching in the back garden. All of them appear repowered which means they get both power and data through a single", "ethernet cable. There's no best to go about with separate power supplies or worrying about wireless connectivity. These cameras have been absolutely rock solid for months now with no dropouts, no connection issues, just reliable", "monitoring, day and night. The RLC528s are great cameras, don't get me wrong, but they've got a fairly standard field of view that leaves some blind spots in the front garden area. RLC530A is the Giro 3V PRE camera in exchange for an honest", 'review. This is essentially an upgrade for my existing RLC528 but one major'], ['review. This is essentially an upgrade for my existing RLC528 but one major difference, it offers a massive 180 degree field of view. The way that works is actually quite clever rather than using a single ultra wide lens which could', 'create a massive fisheye distortion and make everything look warped. RLC530A is using two separate cameras side by side so each camera captures its own 90 degree section and then the cameras in turn are processing effectively stitches those', "two feeds together in a real time to create a seamless ultra wide stream. What's particularly neat is that you can actually adjust the angle of each camera when you first set it up. This lets you fine tune exactly what you want to capture and", "helps maximize that join line where the two feeds meet. I was genuinely curious to see how obvious this scene would be in practice. After all, if it's distracting or creates weird visual artifacts then the whole concept falls", "apart. One feature that's absolutely crucial for my setup is substream support and I'm happy to say that the Giro 3V handles this brilliantly. All of my real and camera support this feature and it's honestly one of the reasons that", 'I stick with the brand. For those running friger or similar video analysis software, sub streams are a complete game changer. The camera simultaneously captures two output streams you get a high resolution stream and in the', "3V PRE case that's 7680 by 2160 and a lower resolution substream that is 1536 by 432 which maintains the same aspect ratio. Frigate uses that lower quality stream for motion detection and object recognition which stops the", 'hardware from getting absolutely hammered. This is particularly important with'], ["hardware from getting absolutely hammered. This is particularly important with the Giro 3V because that 180 degree view creates an unusual ultra wide aspect ratio stream with quite a high resolution. Without sub streams you'd be", 'asking your CPU or hardware accelerators to process every single pixel of their 7680 by 2160 image for detection. Meanwhile you still get to record the full quality mainstream to disk when you actually need to see the details like', "identifying someone's face or reading a license plate. It's kind of the best of both worlds. All of my real and camera's a PRE power 2 so there's no worry about battery life wireless connectivity dropping out or cameras going", 'offline just when you need them the most. That constant reliable stream is essential for proper security monitoring. Okay time to swap out the old ROC528 and see what this dual camera setup can actually do. The mounting process was', "pretty straightforward, same screw pattern, same PRE connection. We've earned a few minutes, I had the camera up and was connected to the network. The difference in coverage is immediately obvious and frankly quite dramatic. With the old ROC", "528 I could see a decent chunk of the front garden but there were definite blind spots along the edges and you want approaching from the far left or the far right could potentially avoid detection until they're quite close to the", "house. With the Geo3V I can pretty much see the entire front garden area right from the fence line on the one side to the driveway on the other side. It's like having two cameras covering overlapping zones but getting it all in one", 'continuous stream. The join line between the two camera feeds is there if'], ["continuous stream. The join line between the two camera feeds is there if you're looking for it. I spent a fair bit of time in the settings trying to get it as seamless as possible. The camera software lets you adjust things like", "the overlap between the two images and blending our rhythm used to merge them. It's probably good enough for security monitoring. In practice you barely notice it and the benefits from the ultra wide coverage far outweigh the mind of visual", "compromise. I haven't yet mapped out the new detection zones in frigate to account for the new third of view but that's just going to be a matter of drawing a few polygons. Adding this into home system was brilliantly", "simple and this is where Ruralink really shines. Their integration is platinum tier which means it's officially supported and maintained by the home assistant core team. You get proper ongoing support, regular updates and", "everything just works as expected. The setup process is wonderfully straight forwards as well. You just go into settings, devices and services, click add integration, search for Ruralink, enter the camera's IP address,", "enter your credentials and within a few seconds home assistant covers all the camera's capabilities and adds to the appropriate entities. With the Jiro3V you get a comprehensive setup controls and sensors.", "There's switches for the built-in flood light and Simon, binary sensors for the person. You can get animal detections, well as motion detection, camera entities for both the mainstream and substream. You even get controls for more granular settings like", 'motion sensitivity, flood light behaviour when motion is detected, Simon volume levels and whether the infrared illuminators activate automatically at night.'], ["Simon volume levels and whether the infrared illuminators activate automatically at night. Comparing this to my existing RuralC528 the NST lists are almost identical which makes sense since they're both modern Ruralink cameras with similar feature sets.", "The main difference is just the resolution and aspect ratio of the camera's streams themselves. I've got a frigate card set up in my main dashboard that shows live feeds from all the cameras. Swapping to the new camera was literally just the case of editing the card configuration", 'and changing device reference from the old camera to the new one. Two minutes of work and I was back up and running. The only thing you might notice is as you flick between them all of the sudden one of the cards suddenly shrinks and then when you go back to one more bigger aspect', 'ratio suddenly jumps up again. Getting new camera to work with frigate was remarkably straightforward. Honestly quite surprised me given the unusual 32x9 aspect ratio. I basically just copied the configuration from my existing RuralC528. Updated the camera name, the IP address and changed the', "resolution settings to match the duo 3v specifications. The mainstream runs at 7680 by 2160. As I mentioned earlier, that's where you get the ultra wide look and the substream will use 1536 by 432. Everything else in the config stayed the same.", "Fragate picks up the new camera immediately, started processing the feed and began to take some objects without any hiccups. The object's texture and accuracy seems to be just as good as my other cameras which is impressive considering the different aspect ratio and the fact that it is", 'essentially processing a stitched image. Wide a third of you means fewer missed events at the edges'], ['essentially processing a stitched image. Wide a third of you means fewer missed events at the edges of the frame which was exactly what I was hoping for. Previously someone could potentially walk long of the the fenteline or the hedge line in my case and only gets detected for a few seconds when', "they crossed into the camera's view. Now I'm getting much earlier detection as they come into the garden from the back garden which gives me better advanced warning and longer clips to review as well. Rearling provides both desktop and mobile apps for configuration and I tested both the Mac app", "and the Android app fairly thoroughly. This is where you'll want to spend some proper time if you're setting up a duo 3v. You can set up a lot more stuff in the apps than you can through the home system integration. To connect to it you just enter your camera's credential,", "as you use a name and password. As long as you're on the same network it should be auto discovered. The settings between both apps are refreshingly consistent. What you can do on your phone, you can also do on your computer. This isn't always the case with security camera manufacturers", 'so it points to re-link for maintaining feature parity. You can configure way more through these apps than you can in home system integration as I said. For instance you can completely remove the watermark from the stream image, adjust the timestamp format and position, fine tune the motion', 'detection sensitivity zones and importantly for the duo 3v. Really dial in that dual camera stitching together of the two streams. The stitching settings are particularly rough exploring. You can adjust the overlap between the two camera images, change the blending algorithm', 'and even manually tweak the alignment if these things look slightly off. When I first set up the'], ['and even manually tweak the alignment if these things look slightly off. When I first set up the camera there was a notable misalignment that made the join lines quite obvious. After spending a few minutes in the app adjusting these settings I got to a point where you really have to look', "for the seam to notice it. One extra thing that I've noticed is in the night mode if you turn on the flood light. The glare you seem to get from the vandal proof casing seems to reflect right back at the cameras and it makes the image almost unusable. The infrared light is not quite as bad.", "You still get a little bit of glare but if you look you can definitely see the seam line much more easily because of the way the light is bouncing around if that inside that dome. This is something I hadn't really anticipated but it's obviously a little bit of a problem but if you're", "relying on this solely to have it as a flood light to light the way so you can see the people in color then that might be a bit of a problem for you because you'd have to have some alternative means to light the driveway. If you're setting up a duo 3v definitely spend some time in the app", 'getting everything tuned properly rather than accepting the defaults. It makes quite a big difference to the final image quality. Since these cameras output standard RTSP streams you can view them pretty much anywhere that supports video streaming. This is one of the big advantages', "with going to a ribbon established brand like rear link rather than some more proprietary systems out there. I can pull up the front door feed for example on my TV using BLC or some other software if I want to see who's at the door from inside the living room. I can view the streams on my phone", 'using an RTSP compatible app. I can even embed them into custom dashboards or third party monitoring'], ["using an RTSP compatible app. I can even embed them into custom dashboards or third party monitoring systems. The RTSP URLs follow predictable format so once you've got the camera working setting up additional cameras is just a matter of changing the IP address in the URL. No wrestling with different", 'streaming protocols or vendor specific APIs. So the duo 3v peri is a solid upgrade if you need wider coverage than traditional security camera can provide. The dual camera approach works well in practice. The integration with famous system is seamless and it plays nicely with trigger and', "other video analysis systems. If this is the stitching perfect no there's still a subtle join line if you're looking for it. There's the wider field of view where for the minor compromise I think so yes for my setup definitely. The 180 degree coverage means I can now monitor the entire", "front garden with a single camera and eliminate all of those blind spots that would bother me a little bit and get much earlier detection if anyone approaches the house from the side. Roughly twice the price of the ROC 528 it's not cheap but if you need to that ultra wide coverage then there", "aren't that many alternatives out there that work this well and think about it you're effectively getting two cameras anyway. So what do you think? Are you running realint cameras in your setup or you using something else entirely? Let me know in the comments what your experience has been like", "with security camera integration I'm always interested to hear about different approaches to the same problem. Don't forget to hit like if this was useful and subscribe for more smart home projects where I dive into the nitty gritty of making everything work together properly. I'll catch", 'you next time and happy automating.']];
+
+// Store original content for each section
+const originalSectionContent = {};
+
+// Initialize: find all sections and store their original content
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    sections.forEach((header, index) => {
+        // Find all content between this header and the next header
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                sectionContent.push(nextElement);
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        // Store original content for each paragraph in this section
+        const sectionId = header.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        originalSectionContent[sectionId] = [];
+        
+        sectionContent.forEach(element => {
+            originalSectionContent[sectionId].push({
+                element: element,
+                originalHTML: element.innerHTML
+            });
+        });
+    });
+});
+
+toggleBtn.addEventListener('click', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    
+    sections.forEach((header, sectionIndex) => {
+        const sectionTitle = header.textContent.trim();
+        const sectionId = sectionTitle.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        
+        // Find paragraphs in this section
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                // Skip image containers
+                if (!nextElement.querySelector('img') && nextElement.innerText.trim().length > 20) {
+                    sectionContent.push(nextElement);
+                }
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        if (showingTranscript) {
+            // Switch back to formatted content
+            if (originalSectionContent[sectionId]) {
+                originalSectionContent[sectionId].forEach(item => {
+                    item.element.innerHTML = item.originalHTML;
+                });
+            }
+        } else {
+            // Switch to transcript content
+            const transcriptForSection = transcriptData[sectionIndex] || [];
+            
+            sectionContent.forEach((element, paragraphIndex) => {
+                if (transcriptForSection[paragraphIndex]) {
+                    element.innerHTML = transcriptForSection[paragraphIndex];
+                }
+            });
+        }
+    });
+    
+    showingTranscript = !showingTranscript;
+    toggleBtn.textContent = showingTranscript ? 'Show Formatted' : 'Toggle Transcript';
+});
+</script>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Smart Home Ideas</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 02 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reolink &#43; Home Assistant &#43; Frigate</title>
+      <link>http://localhost:1313/posts/reolink-home-assistant-frigate/</link>
+      <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/reolink-home-assistant-frigate/</guid>
+      <description>&lt;p&gt;Note: &lt;em&gt;This is generated from a transcript from one of my &lt;a href=&#34;https://www.youtube.com/@BensSmartHomeIdeas&#34;&gt;YouTube videos&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;reolink-duo-3-poe-a-180-degree-vision-for-your-smart-home-security&#34;&gt;Reolink Duo 3 PoE: A 180-Degree Vision for Your Smart Home Security&lt;/h1&gt;&#xA;&lt;p&gt;Hey there, smart home enthusiasts! Today, I&amp;rsquo;m diving deep into the Reolink Duo 3 PoE, a fascinating camera that&amp;rsquo;s essentially two cameras in one promising a massive 180 degrees of coverage. I&amp;rsquo;m going to show you the dual-camera stitching magic, whether that join line is actually noticeable, and how it integrates seamlessly with Home Assistant and Frigate. We&amp;rsquo;ll also explore why substreams might matter a little more than you think. I&amp;rsquo;ll compare it head-to-head with my trusty RLC-520A, dive into the Reolink apps to show you how to configure everything properly, and explore how those standard RTSP streams make this camera work with pretty much anything. I&amp;rsquo;ll be diving into all the details, so if that sounds like fun, then stick around.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Troubleshooting zigbee networks</title>
       <link>http://localhost:1313/posts/troubleshooting-zigbee-networks/</link>
