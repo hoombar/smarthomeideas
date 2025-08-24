@@ -121,7 +121,6 @@ Here are some of the zigbee devices I'm using in my network:
 - Innr smart plugs - https://amzn.to/44EqjDC
 - Sonoff USB coordinator - https://amzn.to/4lyLA7x
 - Candeo dimmer switches - https://amzn.to/4lCR957
-- LEDVance smart plug - https://amzn.to/44U9zH7
 - Aqara vibration sensors - https://s.click.aliexpress.com/e/_omTArqA
 - Tuya motion sensors - https://s.click.aliexpress.com/e/_o2EC0dY
 - Tuya buttons - https://s.click.aliexpress.com/e/_olnvxnY
