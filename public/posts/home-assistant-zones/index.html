@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en-gb">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Home Assistant zones // Smart Home Ideas</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.142.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.c70dd64245d43f7a510b498231733c7f093f88d8f3f85be754027cde34eac18d.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Home Assistant zones">
+  <meta name="twitter:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Unlock Your Smart Home’s Potential: Mastering Home Assistant Zones You know it, I know it: home automation isn&#39;t just for when you&#39;re physically present. In fact, I love that my house takes care of things even when I&#39;m not there. I train something called Brazilian Jiu-Jitsu, and after a workout, I always want a hot shower when I get home. But I don&#39;t want to have to remember to pull out my phone and press a button to boost the hot water while I&#39;m there. Instead, I set up a zone around my Dojo, so my smart home knows when I&#39;m training, and it just handles it for me. This automation also has a high family approval factor, because it will boost the hot water while my wife is at the climbing wall, ensuring she can have a hot shower when she gets back. If you’re new to the channel, my name’s Ben. I’m a software engineer who’s probably spent a little too much time automating my house with Home Assistant. If you like exploring new home automation ideas, then you’re definitely in the right place.">
+
+    <meta property="og:url" content="http://localhost:1313/posts/home-assistant-zones/">
+  <meta property="og:site_name" content="Smart Home Ideas">
+  <meta property="og:title" content="Home Assistant zones">
+  <meta property="og:description" content="Note: This is generated from a transcript from one of my YouTube videos
+Unlock Your Smart Home’s Potential: Mastering Home Assistant Zones You know it, I know it: home automation isn&#39;t just for when you&#39;re physically present. In fact, I love that my house takes care of things even when I&#39;m not there. I train something called Brazilian Jiu-Jitsu, and after a workout, I always want a hot shower when I get home. But I don&#39;t want to have to remember to pull out my phone and press a button to boost the hot water while I&#39;m there. Instead, I set up a zone around my Dojo, so my smart home knows when I&#39;m training, and it just handles it for me. This automation also has a high family approval factor, because it will boost the hot water while my wife is at the climbing wall, ensuring she can have a hot shower when she gets back. If you’re new to the channel, my name’s Ben. I’m a software engineer who’s probably spent a little too much time automating my house with Home Assistant. If you like exploring new home automation ideas, then you’re definitely in the right place.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-23T00:00:00+00:00">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/logo.png" alt="John Doe" /></a>
+      <span class="app-header-title">Smart Home Ideas</span>
+      <p>I&#39;m on a mission to make everyone as passionate about smart homes as I am.</p>
+      <div class="app-header-social">
+        
+          <a href="https://www.youtube.com/@BensSmartHomeIdeas" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-youtube" viewBox="0 0 24 24" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Home Assistant zones</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Dec 23, 2024
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          6 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Note: <em>This is generated from a transcript from one of my <a href="https://www.youtube.com/@BensSmartHomeIdeas">YouTube videos</a></em></p>
+<hr>
+<h1 id="unlock-your-smart-homes-potential-mastering-home-assistant-zones">Unlock Your Smart Home&rsquo;s Potential: Mastering Home Assistant Zones</h1>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00006.jpg" alt="Unlock Your Smart Home's Potential: Mastering Home Assistant Zones demonstration at 6.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Unlock Your Smart Home's Potential: Mastering Home Assistant Zones at 6.0s" onclick="openImageModal('frame_00006.jpg', 'Unlock Your Smart Home's Potential: Mastering Home Assistant Zones demonstration at 6.0s')">
+<img src="frame_00019.jpg" alt="Unlock Your Smart Home's Potential: Mastering Home Assistant Zones demonstration at 19.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Unlock Your Smart Home's Potential: Mastering Home Assistant Zones at 19.0s" onclick="openImageModal('frame_00019.jpg', 'Unlock Your Smart Home's Potential: Mastering Home Assistant Zones demonstration at 19.0s')">
+</div>
+You know it, I know it: home automation isn't just for when you're physically present. In fact, I love that my house takes care of things even when I'm not there. I train something called Brazilian Jiu-Jitsu, and after a workout, I always want a hot shower when I get home. But I don't want to have to remember to pull out my phone and press a button to boost the hot water while I'm there. Instead, I set up a zone around my Dojo, so my smart home knows when I'm training, and it just handles it for me. This automation also has a high family approval factor, because it will boost the hot water while my wife is at the climbing wall, ensuring she can have a hot shower when she gets back.
+<p>If you&rsquo;re new to the channel, my name&rsquo;s Ben. I&rsquo;m a software engineer who&rsquo;s probably spent a little too much time automating my house with Home Assistant. If you like exploring new home automation ideas, then you&rsquo;re definitely in the right place.</p>
+<h2 id="what-are-home-assistant-zones">What Are Home Assistant Zones?</h2>
+<img src="frame_00063.jpg" alt="What Are Home Assistant Zones? demonstration at 63.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="What Are Home Assistant Zones? at 63.0s" onclick="openImageModal('frame_00063.jpg', 'What Are Home Assistant Zones? demonstration at 63.0s')">
+Zones are essentially geofences that you can set up directly within Home Assistant. They're included by default, so there's no need to install anything extra to start using them. A zone is considered active for a user when their device, running the Home Assistant companion app, is within that geofence. There's some potential for them to be a little bit flaky, because some devices try to optimize their battery usage by limiting location updates. But don't worry, we'll get into that in more detail later in this post.
+<h2 id="setting-up-your-first-zone">Setting Up Your First Zone</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00092.jpg" alt="Setting Up Your First Zone demonstration at 92.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Setting Up Your First Zone at 92.0s" onclick="openImageModal('frame_00092.jpg', 'Setting Up Your First Zone demonstration at 92.0s')">
+<img src="frame_00097.jpg" alt="Setting Up Your First Zone demonstration at 97.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Setting Up Your First Zone at 97.0s" onclick="openImageModal('frame_00097.jpg', 'Setting Up Your First Zone demonstration at 97.0s')">
+</div>
+<img src="frame_00111.jpg" alt="Setting Up Your First Zone demonstration at 111.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Setting Up Your First Zone at 111.0s" onclick="openImageModal('frame_00111.jpg', 'Setting Up Your First Zone demonstration at 111.0s')">
+To set up a zone, you'll navigate to **Settings**, then **Areas, Labels & Zones**. Select the **Zones** tab and tap the **Add Zone** button. This will let you draw a circle to create the geofence around the area you're interested in.
+<p>The companion app needs to be running on your phone, and it&rsquo;s crucial to ensure it has access to location services. To do this, open the companion app&rsquo;s settings, go to <strong>Manage Sensors</strong>, scroll down to <strong>Location Sensors</strong>, and turn on both <strong>Location Zone</strong> and <strong>Background Location</strong>. Now that you&rsquo;re set up with zones and the companion app, you can start using them in your automations!</p>
+<h2 id="practical-automation-examples-with-zones">Practical Automation Examples with Zones</h2>
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00128.jpg" alt="Practical Automation Examples with Zones demonstration at 128.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Practical Automation Examples with Zones at 128.0s" onclick="openImageModal('frame_00128.jpg', 'Practical Automation Examples with Zones demonstration at 128.0s')">
+<img src="frame_00137.jpg" alt="Practical Automation Examples with Zones demonstration at 137.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Practical Automation Examples with Zones at 137.0s" onclick="openImageModal('frame_00137.jpg', 'Practical Automation Examples with Zones demonstration at 137.0s')">
+</div>
+<img src="frame_00170.jpg" alt="Practical Automation Examples with Zones demonstration at 170.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Practical Automation Examples with Zones at 170.0s" onclick="openImageModal('frame_00170.jpg', 'Practical Automation Examples with Zones demonstration at 170.0s')">
+I've got a high-efficiency hot water system, and I'm using zones to manage it, but this would, of course, work for something like an Ecobee or similar smart thermostat. My automation is set up to make sure I've been dwelling in the zone for a little while before the hot water is boosted. I don't want to be driving past the dojo and have the boiler kick in and waste energy.
+<p>After quite a bit of trial and error, I realized that you have to explicitly set <code>enabled: true</code> in the trigger step for the automation for the geofence to actually work when you&rsquo;re adding some dwelling time.</p>
+<p>I have a few other automations that don&rsquo;t use a dwell time, but they still leverage zones effectively. One of these automations will turn off potty reminders when I&rsquo;m at the school drop-off. The idea is, if I&rsquo;ve dropped the kid off at nursery, then I don&rsquo;t want to be reminded about using the potty. You know the drill: &ldquo;Don&rsquo;t forget to let the tiny human take a potty break before it&rsquo;s a puddle party!&rdquo;</p>
+<p>Another automation will turn the heating off when we head to the in-laws. They live quite far away, and normally we visit for a couple of days, so it makes sense to turn off the hot water while we&rsquo;re there. The automation, of course, will do the reverse as well, so that the hot water gets turned on as we head home. This is superior by far to the basic home and away automations that you get with typical smart thermostats, because you can add in some smart geographic considerations around how long it will take the hot water to heat and how long for the house to warm up. You don&rsquo;t really want your heating to be turning back on <em>as</em> you get home; you want it to turn on so it&rsquo;s warm by the time that you arrive back.</p>
+<h2 id="optimizing-zone-performance-on-android-devices">Optimizing Zone Performance on Android Devices</h2>
+<img src="frame_00212.jpg" alt="Optimizing Zone Performance on Android Devices demonstration at 212.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Optimizing Zone Performance on Android Devices at 212.0s" onclick="openImageModal('frame_00212.jpg', 'Optimizing Zone Performance on Android Devices demonstration at 212.0s')">
+<img src="frame_00238.jpg" alt="Optimizing Zone Performance on Android Devices demonstration at 238.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Optimizing Zone Performance on Android Devices at 238.0s" onclick="openImageModal('frame_00238.jpg', 'Optimizing Zone Performance on Android Devices demonstration at 238.0s')">
+<div style="display: flex; justify-content: center; gap: 5px; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; width: 50%; float: right; flex-wrap: wrap;">
+<img src="frame_00244.jpg" alt="Optimizing Zone Performance on Android Devices demonstration at 244.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Optimizing Zone Performance on Android Devices at 244.0s" onclick="openImageModal('frame_00244.jpg', 'Optimizing Zone Performance on Android Devices demonstration at 244.0s')">
+<img src="frame_00249.jpg" alt="Optimizing Zone Performance on Android Devices demonstration at 249.0s" style="width: calc(50% - 2.5px) !important; height: auto !important; object-fit: cover; border-radius: 4px; display: block !important; margin: 0 !important; cursor: pointer !important;" title="Optimizing Zone Performance on Android Devices at 249.0s" onclick="openImageModal('frame_00249.jpg', 'Optimizing Zone Performance on Android Devices demonstration at 249.0s')">
+</div>
+<img src="frame_00266.jpg" alt="Optimizing Zone Performance on Android Devices demonstration at 266.0s" style="width: 50%; float: right; margin-left: 20px; margin-bottom: 15px; margin-top: 10px; border-radius: 4px; cursor: pointer;" title="Optimizing Zone Performance on Android Devices at 266.0s" onclick="openImageModal('frame_00266.jpg', 'Optimizing Zone Performance on Android Devices demonstration at 266.0s')">
+If you're using an Android phone, it's worth knowing that there's a feature called Doze Mode. I'll add some links down in the description if you want to read more, but basically, in a nutshell, if your phone detects that the screen is off and you're not doing anything, it will put it into a deeper sleep and then batch actions when it wakes up. Again, this means notifications can be delayed, and relevant to this video, location updates won't happen as frequently.
+<p>There are a few things you can change to make sure that your geofences are tripped in a timely manner.</p>
+<ol>
+<li>First, go into the app info for the Home Assistant companion app and make sure you&rsquo;ve turned off <strong>Pause app activity if unused</strong>.</li>
+<li>Next, under <strong>App battery usage</strong>, make sure that you&rsquo;ve turned on <strong>Allow background usage</strong>.</li>
+<li>Finally, go into <strong>Battery</strong> and <strong>Battery Saver</strong> settings, open up <strong>Adaptive Battery</strong>, and make sure <strong>Use adaptive battery</strong> is turned off.</li>
+</ol>
+<p>This will, of course, affect your battery life because your phone won&rsquo;t be entering Doze Mode as aggressively, but it will mean that you get notifications quicker in some cases and it will also trigger zones much more quickly. Depending on your setup, this might be a problem for you, but I&rsquo;m still getting a full day of battery life with this setup. I enabled this setting a few months ago, and while there&rsquo;s a noticeable dip in the battery level, the improved responsiveness is worth it for me.</p>
+<p>If you enjoyed this video, please throw a thumbs up down below – it really helps the channel out! And what are you using zones for if you&rsquo;ve implemented them? Let me know down below in the comments. Until next time, I&rsquo;ll see you!</p>
+<h1 id="support-me-to-keep-making-videos">Support me to keep making videos</h1>
+<figure class="float-right"><a href="https://ko-fi.com/smarthomeideas"><img src="/img/ko-fi-stamp.png"
+    alt="Ko-Fi" width="300"></a>
+</figure>
+
+<p>If you like the work I&rsquo;m doing, please drop a like on the video, or consider subscribing to the channel.</p>
+<p>In case you&rsquo;re in a particularly generous mood, you can fund my next cup of coffee over on <a href="https://ko-fi.com/smarthomeideas">Ko-Fi</a></p>
+<p>The links from some of my videos are affiliate links, which means I get a small kickback at no extra cost to you. It just means that the affiliate knows the traffic came from me.</p>
+<h1 id="video">Video</h1>
+<p>You can watch the full video on YouTube here:
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/95_d6OqZk4E?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</p>
+<!-- Image Modal for Click-to-Enlarge -->
+<style>
+/* Modal responsive styles for better mobile experience */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+#imageModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 98%;
+    max-height: 95%;
+    padding: 0;
+    margin: 0;
+}
+
+#imageModal #modalImage,
+#imageModal .modal-content #modalImage,
+.post-content #imageModal #modalImage {
+    width: auto;
+    height: auto;
+    max-height: 92vh;
+    max-width: 95vw;
+    min-width: 80vw;
+    min-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: block;
+}
+
+#modalCaption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    #imageModal .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 5px;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 95vh;
+        max-width: 98vw;
+        min-width: 90vw;
+        min-height: 70vh;
+        border-radius: 4px;
+    }
+    
+    #modalCaption {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
+
+/* Ultra-small screens (phones in portrait) */
+@media (max-width: 480px) {
+    #imageModal .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 2px;
+    }
+    
+    #imageModal #modalImage,
+    #imageModal .modal-content #modalImage,
+    .post-content #imageModal #modalImage {
+        max-height: 98vh;
+        max-width: 99vw;
+        min-width: 95vw;
+        min-height: 80vh;
+        border-radius: 2px;
+    }
+    
+    .modal-close {
+        top: 5px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+</style>
+<div id="imageModal" onclick="closeImageModal()">
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
+    </div>
+    <span class="modal-close" onclick="closeImageModal()">&times;</span>
+</div>
+<script>
+function openImageModal(src, alt) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalCaption').textContent = alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+<!-- Transcript Toggle Functionality -->
+<div id="contentToggle" style="position: fixed; top: 20px; right: 20px; z-index: 999; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px;">
+    <button id="toggleBtn" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+        Toggle Transcript
+    </button>
+</div>
+<script>
+let showingTranscript = false;
+const toggleBtn = document.getElementById('toggleBtn');
+
+// Store transcript data for sections
+const transcriptData = [["You know it, I know it, and despite what some nutters out there on the internet will tell you, culture is so. Home automation doesn't have to be reserved when you're at home, in fact. I love that my house takes care of things while I'm not there. I train something called", "Brazilian Jiu-Jitsu and because it's a workout, I want a hot shower when I get home, but I don't want to have to remember to pull out my phone and press a button to boost the hot water while I'm there. Instead, I set up a zone around with Dojo, so my smart home knows when I'm training,", "and it will just do it for me. This automation also has a high family approval factor, because it will boost the hot water while my wife is at the climbing wall, so that she can have a hot shower when she gets back. If you're new to the channel, my name's Ben, I'm a software engineer", "who's spent probably a little bit too much time automating my house with home assistant. If you like exploring new home automation ideas, then you're in the right place."], ["Zones are basically just geofences that you can set up in home assistant, and they're baited in by default, so there's no need to go installing anything extra in order to start using them. A zone's considered active for a user when their device running the home assistant companion app", "is in that geofence. There's some potential for them to be a little bit flaky, because some devices try to optimize their battery usage by limiting location updates, but we'll get into that in a little more detail for everyone in the video. To set up a zone, you navigate to settings,", "areas, labels and zones, select the zones tab and tap the add zone button, and that will let you draw a circle to create the geofence around the area that you're interested in. The companion app needs to be running on your phone as well, it needs to make sure it has access to location services.", "Few open settings, companion app, manage sensors, scroll down to location sensors, and turn on a location zone and background location. Now you're set up with zones and the companion"], ["and turn on a location zone and background location. Now you're set up with zones and the companion app, you can start using them in your automations. I've got a high firm start and I'm using that, but this would of course work for something like an eco-via one. My automation set up to make", "sure I've been dwelling in the zone for a little while before the hot water's boosted. I don't want to be driving past the dojo and for the boiler to kick in and waste energy. After literally as a trial and error, I realised that you have to explicitly set enabled to true in the trigger step", "for the automation for the geofence to actually work when you're adding some dwelling time. There's a few other automations that I have which don't use a dwell time, but they still use zones. One of these automations will turn off potty reminders when I'm at the school drop off.", "The idea is if I've dropped the kid off at nursery, then I don't want to be reminded about using the potty. Don't forget to let the tiny human take a potty break before it's a puddle party. Another automation will turn the heating off when we head to the in-laws. They live quite far away", 'and normally we visit for a couple of days, so it kind of makes sense to turn off the hot water'], ["and normally we visit for a couple of days, so it kind of makes sense to turn off the hot water while we're there. The automation of course will do the reverse as well, so that the hot water gets turned on as we head home. This is superior by far to the home and away automations that you get", "with typical smart thermostats, because you can add in some smart geographic considerations around how long it will take, the hot water to heat and how long for the house to warm up. You don't really want your heating to be turning back on as you get home. You want it to turn on", "so it's warm by the time that you arrive back. If you're using an Android phone, it's worth knowing that there's a feature called Does Mode. I'll add in some links down in the description if you want to read more, but basically in a nutshell, if your phone detects, let the screen is off and you're", "not doing anything, it will put it into a deeper sleep and then back shactions when it wakes up. Again, this means notifications can be delayed and relevant to this video location updates won't"], ["Again, this means notifications can be delayed and relevant to this video location updates won't happen. There's a few things to change to make sure that the geofences are tripped in a timely manner. First, go into the app info and make sure you've turned on pause app activity if unused.", "Next, under app battery usage, make sure that you've turned on allow background usage. Finally, go into battery and battery saver up, open up adaptive battery and make sure use adaptive battery is turned off. This will of course affect your battery life because your", "phone won't be entering Does Mode, but it will mean that you get notifications quicker in some cases and it will also trigger zones much more quickly. Depending on your setup, this might be a problem for you, but I'm still getting a full day with this setup. You can see I tend it on a few months ago,", "but there's a noticeable dip in the battery level. If you enjoyed the video, throw a thumbs up, down below really helps the channel out and what are you using zones for if you use them? Let me know down below in the comments. Until next time, I'll see you."]];
+
+// Store original content for each section
+const originalSectionContent = {};
+
+// Initialize: find all sections and store their original content
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    sections.forEach((header, index) => {
+        // Find all content between this header and the next header
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                sectionContent.push(nextElement);
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        // Store original content for each paragraph in this section
+        const sectionId = header.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        originalSectionContent[sectionId] = [];
+        
+        sectionContent.forEach(element => {
+            originalSectionContent[sectionId].push({
+                element: element,
+                originalHTML: element.innerHTML
+            });
+        });
+    });
+});
+
+toggleBtn.addEventListener('click', function() {
+    const sections = document.querySelectorAll('h2, h3');
+    
+    sections.forEach((header, sectionIndex) => {
+        const sectionTitle = header.textContent.trim();
+        const sectionId = sectionTitle.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        
+        // Find paragraphs in this section
+        const sectionContent = [];
+        let nextElement = header.nextElementSibling;
+        
+        while (nextElement && !nextElement.matches('h2, h3')) {
+            if (nextElement.tagName === 'P' || nextElement.tagName === 'DIV') {
+                // Skip image containers
+                if (!nextElement.querySelector('img') && nextElement.innerText.trim().length > 20) {
+                    sectionContent.push(nextElement);
+                }
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        if (showingTranscript) {
+            // Switch back to formatted content
+            if (originalSectionContent[sectionId]) {
+                originalSectionContent[sectionId].forEach(item => {
+                    item.element.innerHTML = item.originalHTML;
+                });
+            }
+        } else {
+            // Switch to transcript content
+            const transcriptForSection = transcriptData[sectionIndex] || [];
+            
+            sectionContent.forEach((element, paragraphIndex) => {
+                if (transcriptForSection[paragraphIndex]) {
+                    element.innerHTML = transcriptForSection[paragraphIndex];
+                }
+            });
+        }
+    });
+    
+    showingTranscript = !showingTranscript;
+    toggleBtn.textContent = showingTranscript ? 'Show Formatted' : 'Toggle Transcript';
+});
+</script>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
