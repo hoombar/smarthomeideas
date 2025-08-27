@@ -6,8 +6,15 @@
     <description>Recent content on Smart Home Ideas</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 22 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Youtube Workflows</title>
+      <link>http://localhost:1313/posts/automating-youtube-workflows/</link>
+      <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/automating-youtube-workflows/</guid>
+      <description>&lt;p&gt;Note: &lt;em&gt;This is generated from a transcript from one of my &lt;a href=&#34;https://www.youtube.com/@BensSmartHomeIdeas&#34;&gt;YouTube videos&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;automating-youtube-workflows-my-end-to-end-process&#34;&gt;Automating YouTube Workflows: My End-to-End Process&lt;/h1&gt;&#xA;&lt;p&gt;Today, I&amp;rsquo;m excited to share with you how I automate as much as possible to create these YouTube videos from start to finish. This comprehensive guide covers everything from the initial spark of an idea all the way through to publishing the final video, followed by a blog post – which I generally publish for those who prefer to read rather than watch. I&amp;rsquo;ve had quite a few people ask me about my workflow, especially the technical bits, so I thought it was about time I shared the whole process. Plus, I&amp;rsquo;ll be sharing some of the scripts and automations that I&amp;rsquo;ve built along the way, so you can grab them for free if you want to use them for your own projects.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Reolink &#43; Home Assistant &#43; Frigate</title>
       <link>http://localhost:1313/posts/reolink-home-assistant-frigate/</link>
