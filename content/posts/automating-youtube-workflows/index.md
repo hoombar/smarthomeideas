@@ -85,6 +85,8 @@ It might seem like a lot of moving parts, but each piece solves a specific probl
 # Links:
 - Ulanzi claw: https://s.click.aliexpress.com/e/_oE3xRxb
 - Govee Glide Hexa: https://amzn.to/47NEub9
+- Generate blog: https://github.com/hoombar/youtube2hugo
+- Check affiliate links: https://github.com/hoombar/linkpulse
 
 # Video
 
